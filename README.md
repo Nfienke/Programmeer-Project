@@ -1,6 +1,6 @@
 # Programmeer-Project
 
-Nienke Pot //
+Nienke Pot 
 Studentnummer: 10381015
 Project titel:
 
