@@ -18,6 +18,8 @@ Het voorstel is om een work out program applicatie te maken. Deze applicatie gee
 <br>
 
 <b>Schetsen</b><br>
+=======
+<b>Sketch</b><br>
 ![doc/sketchtotal](doc/sketchtotal.png)
 
 <b>data sets and sources</b><br> 
