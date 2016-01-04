@@ -21,7 +21,7 @@ Het voorstel is om een work out program applicatie te maken. Deze applicatie gee
 ![doc/sketchtotal](doc/sketchtotal.png)
 
 <b>data sets and sources</b><br> 
- -Eerst was het idee om de data in een list op te slaan, maar nu wil ik gaan kijken of ik gebruik kan maken van de CloudKit. 
+ - Eerst was het idee om de data in een list op te slaan, maar nu wil ik gaan kijken of ik gebruik kan maken van de CloudKit. 
 
 <b>Onderdelen van de applicatie</b><br>
 - New Work Out Program: hier wordt een nieuw work out programma vastgesteld, door op een work out te klikken, dan een tijd aan te klikken en dan toe te voegen. 
