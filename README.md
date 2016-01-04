@@ -11,7 +11,6 @@ Project titel: Work Out Program
 <b>Sketch<b><br>
 ![doc/sketchtotal](doc/sketchtotal.png)
 
-
 data sets and sources --> custom object
 
 parts of the application
