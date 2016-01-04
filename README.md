@@ -4,7 +4,7 @@ Nienke Pot <br>
 Studentnummer: 10381015  <br>
 Project titel: Work Out Program
 
-# Propasal
+# Proposal
 
 Het voorstel is om een work out program applicatie te maken. Deze applicatie geeft de gebruiker de mogelijkheid om eerst zelf een work out programma in te stellen en vervolgens kan de gebruiker dit programma gebruiken. Tijdens het sporten laat de applicatie zien welke oefeningen je moet doen en hoelang. Dit geeft de sporter een houvast tijdens het sporten. De sporter hoeft op deze manier niet na te denken tijdens het sporten. <br>
 
@@ -18,13 +18,10 @@ Het voorstel is om een work out program applicatie te maken. Deze applicatie gee
 <br>
 
 <b>Schetsen</b><br>
-=======
-<b>Sketch</b><br>
 ![doc/sketchtotal](doc/sketchtotal.png)
 
 <b>data sets and sources</b><br> 
  -Eerst was het idee om de data in een list op te slaan, maar nu wil ik gaan kijken of ik gebruik kan maken van de CloudKit. 
-
 
 <b>Onderdelen van de applicatie</b><br>
 - New Work Out Program: hier wordt een nieuw work out programma vastgesteld, door op een work out te klikken, dan een tijd aan te klikken en dan toe te voegen. 
@@ -45,7 +42,7 @@ Mocht de applicatie te simpel blijken zijn er een aantal features die ik wil toe
 - Delen van de work out met anderen. 
 
 
-<b>review similair applications</b><br>
+<b>Review gelijkwaardige applicaties</b><br>
 - Seven: deze applicatie lijkt op deze app. De applicatie geeft aan de gebruiker aan wat hij moet doen en hoelang. De gebruiker kan kiezen tussen een aantal oefeningen, maar kan zelf niet een work out samenstellen. Een voice over geeft instructies aan de gebruiker.
 -  Trainingen: deze applicatie helpt de gebruiker ook tijdens de training, maar richt zich maar op 1 spiergroep. De gebruiker kan hier ook niet zelf een volledige work out samenstellen. De applicatie laat wel instructie fimpjes zien, zodat de gebruiker deze makkelijk kan nadoen. 
 
