@@ -9,7 +9,7 @@ Project titel: Work Out Program
 <b>Features<b><br>
 
 <b>Sketch<b><br>
-![doc/sketchtotal](doc/sketchtotal)
+![doc/sketchtotal]()
 
 
 data sets and sources --> custom object
