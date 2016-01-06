@@ -8,16 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MenuView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //http://stackoverflow.com/questions/25106784/how-to-set-a-background-image-to-a-uiview-in-swift
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B8.png")!)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
 

@@ -49,3 +49,4 @@ Mocht de applicatie te simpel blijken zijn er een aantal features die ik wil toe
 
 # Cite
 
+- Achtergrond: http://stackoverflow.com/questions/25106784/how-to-set-a-background-image-to-a-uiview-in-swift

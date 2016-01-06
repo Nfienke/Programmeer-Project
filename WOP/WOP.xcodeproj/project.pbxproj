@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3214F87F1C3D442300D75A5F /* NameNewWOPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3214F87E1C3D442300D75A5F /* NameNewWOPView.swift */; };
+		3214F8811C3D444000D75A5F /* NewWOPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3214F8801C3D444000D75A5F /* NewWOPView.swift */; };
+		3214F8831C3D454A00D75A5F /* MyWOPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3214F8821C3D454A00D75A5F /* MyWOPView.swift */; };
+		3214F8851C3D457E00D75A5F /* MyWOPOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3214F8841C3D457E00D75A5F /* MyWOPOverviewView.swift */; };
+		3214F8871C3D45AB00D75A5F /* WOView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3214F8861C3D45AB00D75A5F /* WOView.swift */; };
+		3214F8891C3D45BB00D75A5F /* WOEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3214F8881C3D45BB00D75A5F /* WOEndView.swift */; };
 		32F043861C3BBF4100A8F69A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F043851C3BBF4100A8F69A /* AppDelegate.swift */; };
-		32F043881C3BBF4100A8F69A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F043871C3BBF4100A8F69A /* ViewController.swift */; };
+		32F043881C3BBF4100A8F69A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F043871C3BBF4100A8F69A /* MenuView.swift */; };
 		32F0438B1C3BBF4100A8F69A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F043891C3BBF4100A8F69A /* Main.storyboard */; };
 		32F0438D1C3BBF4100A8F69A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32F0438C1C3BBF4100A8F69A /* Assets.xcassets */; };
 		32F043901C3BBF4100A8F69A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F0438E1C3BBF4100A8F69A /* LaunchScreen.storyboard */; };
@@ -34,9 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3214F87E1C3D442300D75A5F /* NameNewWOPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameNewWOPView.swift; sourceTree = "<group>"; };
+		3214F8801C3D444000D75A5F /* NewWOPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWOPView.swift; sourceTree = "<group>"; };
+		3214F8821C3D454A00D75A5F /* MyWOPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWOPView.swift; sourceTree = "<group>"; };
+		3214F8841C3D457E00D75A5F /* MyWOPOverviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWOPOverviewView.swift; sourceTree = "<group>"; };
+		3214F8861C3D45AB00D75A5F /* WOView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WOView.swift; sourceTree = "<group>"; };
+		3214F8881C3D45BB00D75A5F /* WOEndView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WOEndView.swift; sourceTree = "<group>"; };
 		32F043821C3BBF4100A8F69A /* WOP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WOP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F043851C3BBF4100A8F69A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		32F043871C3BBF4100A8F69A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		32F043871C3BBF4100A8F69A /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		32F0438A1C3BBF4100A8F69A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32F0438C1C3BBF4100A8F69A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32F0438F1C3BBF4100A8F69A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,10 +86,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3214F87C1C3D437B00D75A5F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32F0438E1C3BBF4100A8F69A /* LaunchScreen.storyboard */,
+				32F043891C3BBF4100A8F69A /* Main.storyboard */,
+				3214F8821C3D454A00D75A5F /* MyWOPView.swift */,
+				32F043871C3BBF4100A8F69A /* MenuView.swift */,
+				3214F8881C3D45BB00D75A5F /* WOEndView.swift */,
+				3214F8861C3D45AB00D75A5F /* WOView.swift */,
+				3214F87E1C3D442300D75A5F /* NameNewWOPView.swift */,
+				3214F8801C3D444000D75A5F /* NewWOPView.swift */,
+				3214F8841C3D457E00D75A5F /* MyWOPOverviewView.swift */,
+			);
+			name = Views;
+			path = WOP;
+			sourceTree = "<group>";
+		};
+		3214F87D1C3D43A700D75A5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		32F043791C3BBF4100A8F69A = {
 			isa = PBXGroup;
 			children = (
 				32F043841C3BBF4100A8F69A /* WOP */,
+				3214F87D1C3D43A700D75A5F /* Models */,
+				3214F87C1C3D437B00D75A5F /* Views */,
 				32F043991C3BBF4100A8F69A /* WOPTests */,
 				32F043A41C3BBF4100A8F69A /* WOPUITests */,
 				32F043831C3BBF4100A8F69A /* Products */,
@@ -98,10 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				32F043851C3BBF4100A8F69A /* AppDelegate.swift */,
-				32F043871C3BBF4100A8F69A /* ViewController.swift */,
-				32F043891C3BBF4100A8F69A /* Main.storyboard */,
 				32F0438C1C3BBF4100A8F69A /* Assets.xcassets */,
-				32F0438E1C3BBF4100A8F69A /* LaunchScreen.storyboard */,
 				32F043911C3BBF4100A8F69A /* Info.plist */,
 			);
 			path = WOP;
@@ -256,7 +291,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32F043881C3BBF4100A8F69A /* ViewController.swift in Sources */,
+				3214F87F1C3D442300D75A5F /* NameNewWOPView.swift in Sources */,
+				32F043881C3BBF4100A8F69A /* MenuView.swift in Sources */,
+				3214F8891C3D45BB00D75A5F /* WOEndView.swift in Sources */,
+				3214F8851C3D457E00D75A5F /* MyWOPOverviewView.swift in Sources */,
+				3214F8811C3D444000D75A5F /* NewWOPView.swift in Sources */,
+				3214F8831C3D454A00D75A5F /* MyWOPView.swift in Sources */,
+				3214F8871C3D45AB00D75A5F /* WOView.swift in Sources */,
 				32F043861C3BBF4100A8F69A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +525,7 @@
 				32F043AC1C3BBF4100A8F69A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32F043AD1C3BBF4100A8F69A /* Build configuration list for PBXNativeTarget "WOPTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +534,7 @@
 				32F043AF1C3BBF4100A8F69A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32F043B01C3BBF4100A8F69A /* Build configuration list for PBXNativeTarget "WOPUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +543,7 @@
 				32F043B21C3BBF4100A8F69A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
