@@ -51,6 +51,9 @@
                                             <constraint firstAttribute="height" constant="50" id="U58-Cp-lJx"/>
                                         </constraints>
                                         <state key="normal" image="Play_2"/>
+                                        <connections>
+                                            <segue destination="R1h-52-PfE" kind="show" id="NXT-cW-wQy"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="equalSpacing" spacing="10"/>
@@ -79,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="180"/>
+            <point key="canvasLocation" x="-1223" y="4"/>
         </scene>
         <!--MyWOP View-->
         <scene sceneID="JHY-64-3iG">
@@ -101,7 +104,7 @@
                                 </constraints>
                                 <state key="normal" image="buttonmenu"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="syP-lq-bnx"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="4eR-j9-9mg"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9OU-xr-iuw">
@@ -160,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oD-sn-dum" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="180"/>
+            <point key="canvasLocation" x="-243" y="4"/>
         </scene>
         <!--View-->
         <scene sceneID="bea-9B-FT4">
@@ -174,14 +177,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7x-Bu-e0L">
-                                <rect key="frame" x="0.0" y="0.0" width="69" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="Wcr-Mr-Lyb"/>
-                                    <constraint firstAttribute="width" constant="69" id="dCc-AI-fIa"/>
-                                </constraints>
-                                <state key="normal" image="buttonmenu"/>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="150" placeholderIntrinsicHeight="50" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="qX0-eP-UfZ">
                                 <rect key="frame" x="225" y="485" width="150" height="50"/>
                                 <subviews>
@@ -274,19 +269,20 @@
                         <color key="backgroundColor" red="0.88172097370000002" green="1" blue="0.52817110820000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="qX0-eP-UfZ" secondAttribute="trailing" constant="225" id="2lR-MC-0cK"/>
-                            <constraint firstItem="K7x-Bu-e0L" firstAttribute="top" secondItem="i9E-Vb-Brb" secondAttribute="top" id="LKX-B7-BZe"/>
                             <constraint firstItem="pdg-a8-Ffo" firstAttribute="leading" secondItem="i9E-Vb-Brb" secondAttribute="leading" constant="20" id="TB0-y3-Wy8"/>
                             <constraint firstItem="qX0-eP-UfZ" firstAttribute="leading" secondItem="i9E-Vb-Brb" secondAttribute="leading" constant="225" id="gLO-x5-jHj"/>
-                            <constraint firstItem="K7x-Bu-e0L" firstAttribute="leading" secondItem="i9E-Vb-Brb" secondAttribute="leading" id="gxF-yT-3bL"/>
                             <constraint firstItem="gJN-5e-7oX" firstAttribute="top" secondItem="qX0-eP-UfZ" secondAttribute="bottom" constant="65" id="mMt-9A-Tet"/>
                             <constraint firstItem="pdg-a8-Ffo" firstAttribute="top" secondItem="wK8-UB-NJI" secondAttribute="bottom" constant="35" id="oqX-xN-JRH"/>
                             <constraint firstAttribute="trailing" secondItem="pdg-a8-Ffo" secondAttribute="trailing" constant="20" id="tK7-CP-h1E"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="WGo-PH-cYA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ky1-7e-fWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1719" y="201"/>
+            <point key="canvasLocation" x="1227" y="-815"/>
         </scene>
         <!--NewWOP View-->
         <scene sceneID="Agm-OL-YJA">
@@ -457,7 +453,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K5h-a0-0Nr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010" y="1051"/>
+            <point key="canvasLocation" x="-206" y="927"/>
         </scene>
         <!--End View-->
         <scene sceneID="Hfg-GL-5RI">
@@ -471,14 +467,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhT-dd-RbD">
-                                <rect key="frame" x="0.0" y="0.0" width="69" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="4dN-ll-u7h"/>
-                                    <constraint firstAttribute="width" constant="69" id="Qsc-VS-UDn"/>
-                                </constraints>
-                                <state key="normal" image="buttonmenu"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Work Out is done" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHr-yk-hXq">
                                 <rect key="frame" x="0.0" y="49" width="600" height="43"/>
                                 <constraints>
@@ -510,6 +498,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="SZ9-JP-0wo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ste-hJ-lVO">
                                         <rect key="frame" x="200" y="195" width="200" height="60"/>
@@ -529,6 +520,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <segue destination="hg5-uL-nPP" kind="show" id="3Xy-zf-TCT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8K7-hx-OqW">
                                         <rect key="frame" x="200" y="390" width="200" height="60"/>
@@ -557,19 +551,17 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="rsc-AU-pg3" secondAttribute="trailing" id="6ap-RE-f8f"/>
                             <constraint firstAttribute="trailing" secondItem="MHr-yk-hXq" secondAttribute="trailing" id="MFS-5e-mkP"/>
-                            <constraint firstItem="RhT-dd-RbD" firstAttribute="top" secondItem="KpV-AI-uIS" secondAttribute="top" id="Rvf-Id-Ald"/>
                             <constraint firstItem="MHr-yk-hXq" firstAttribute="top" secondItem="QRA-Fz-JpJ" secondAttribute="bottom" constant="29" id="TSd-nm-Us8"/>
                             <constraint firstItem="rsc-AU-pg3" firstAttribute="top" secondItem="QRA-Fz-JpJ" secondAttribute="bottom" constant="80" id="UVx-lu-74a"/>
                             <constraint firstItem="MHr-yk-hXq" firstAttribute="leading" secondItem="KpV-AI-uIS" secondAttribute="leading" id="dNt-mq-6lW"/>
                             <constraint firstItem="LTR-Je-cqq" firstAttribute="top" secondItem="rsc-AU-pg3" secondAttribute="bottom" constant="50" id="hov-hU-grZ"/>
-                            <constraint firstItem="RhT-dd-RbD" firstAttribute="leading" secondItem="KpV-AI-uIS" secondAttribute="leading" id="uB3-E8-4TN"/>
                             <constraint firstItem="rsc-AU-pg3" firstAttribute="leading" secondItem="KpV-AI-uIS" secondAttribute="leading" id="xNN-Gk-K78"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VQ-fc-1d1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2364" y="201"/>
+            <point key="canvasLocation" x="2144" y="-836"/>
         </scene>
         <!--MyWOP Overview View-->
         <scene sceneID="wlY-a4-4aK">
@@ -646,6 +638,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <segue destination="hg5-uL-nPP" kind="show" id="OkB-XN-bxE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -671,7 +666,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Qe-H5-F0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1825" y="1051"/>
+            <point key="canvasLocation" x="505" y="4"/>
         </scene>
         <!--Name NewWOP View-->
         <scene sceneID="f1X-Rl-na2">
@@ -688,6 +683,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSm-qb-Fq6">
                                 <rect key="frame" x="0.0" y="0.0" width="69" height="32"/>
                                 <state key="normal" image="buttonmenu"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="nWX-oO-7gL"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pyj-Om-Mx4">
                                 <rect key="frame" x="20" y="168" width="135" height="30"/>
@@ -720,7 +718,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETr-22-Gyq" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="1051"/>
+            <point key="canvasLocation" x="-1223" y="915"/>
         </scene>
     </scenes>
     <resources>
@@ -735,7 +733,9 @@
         <image name="buttonnwop" width="490" height="156"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="btC-tj-zpk"/>
+        <segue reference="WGo-PH-cYA"/>
+        <segue reference="NXT-cW-wQy"/>
+        <segue reference="3Xy-zf-TCT"/>
         <segue reference="LDM-UG-8tz"/>
     </inferredMetricsTieBreakers>
 </document>

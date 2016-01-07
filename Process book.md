@@ -9,3 +9,6 @@
 ##Dag 3
 - Prototype afgemaakt. Lay out in orde gemaakt en al een aantal segues toegevoegd. 
 - Een button werkte niet in een bepaalde landscape, door constraints te resetten werkte het weer. 
+
+##Dag 4
+- Maken design document.
