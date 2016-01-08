@@ -14,7 +14,7 @@ class MenuView: UIViewController {
         super.viewDidLoad()
         
         //http://stackoverflow.com/questions/25106784/how-to-set-a-background-image-to-a-uiview-in-swift
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B8.png")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B9.png")!)
         
     }
 

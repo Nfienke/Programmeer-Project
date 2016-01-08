@@ -14,7 +14,7 @@ class MyWOPView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B7.png")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B10.png")!)
         
     }
     

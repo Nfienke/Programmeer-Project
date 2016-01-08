@@ -133,27 +133,14 @@
                                     <segue destination="eiJ-Ne-iDT" kind="show" id="LDM-UG-8tz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Work Out programs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SpE-87-DQO">
-                                <rect key="frame" x="0.0" y="45" width="600" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="Rqg-MP-cLr"/>
-                                    <constraint firstAttribute="height" constant="43" id="kVm-Cl-n2D"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="38"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.88172097370000002" green="1" blue="0.52817110820000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="9OU-xr-iuw" firstAttribute="leading" secondItem="5w5-dg-YYo" secondAttribute="leading" constant="50" id="1sX-MU-j4j"/>
-                            <constraint firstItem="SpE-87-DQO" firstAttribute="leading" secondItem="5w5-dg-YYo" secondAttribute="leading" id="Dve-Ho-JcJ"/>
-                            <constraint firstAttribute="trailing" secondItem="SpE-87-DQO" secondAttribute="trailing" id="HPO-B3-AX6"/>
                             <constraint firstItem="eSf-Wo-my4" firstAttribute="leading" secondItem="5w5-dg-YYo" secondAttribute="leading" constant="200" id="LBX-E4-uPa"/>
                             <constraint firstItem="9OU-xr-iuw" firstAttribute="top" secondItem="99Y-uy-p1O" secondAttribute="bottom" constant="83" id="NMn-Lc-scq"/>
                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eSf-Wo-my4" secondAttribute="trailing" constant="200" id="OvX-AS-7qF"/>
                             <constraint firstItem="eSf-Wo-my4" firstAttribute="top" secondItem="9OU-xr-iuw" secondAttribute="bottom" constant="16" id="Ppx-SP-plj"/>
-                            <constraint firstItem="SpE-87-DQO" firstAttribute="top" secondItem="l7u-9w-wwY" secondAttribute="bottom" constant="13" id="VYm-rk-YeH"/>
                             <constraint firstAttribute="trailing" secondItem="9OU-xr-iuw" secondAttribute="trailing" constant="50" id="b5P-QQ-mzG"/>
                             <constraint firstItem="GMX-EV-ncb" firstAttribute="top" secondItem="eSf-Wo-my4" secondAttribute="bottom" constant="8" id="fV8-6m-MeA"/>
                             <constraint firstItem="l7u-9w-wwY" firstAttribute="leading" secondItem="5w5-dg-YYo" secondAttribute="leading" id="wbf-5T-xvy"/>
@@ -467,16 +454,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Work Out is done" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHr-yk-hXq">
-                                <rect key="frame" x="0.0" y="49" width="600" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="1rt-7L-8NP"/>
-                                    <constraint firstAttribute="height" constant="43" id="WEF-wS-2LT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="38"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalCentering" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rsc-AU-pg3">
                                 <rect key="frame" x="0.0" y="100" width="600" height="450"/>
                                 <subviews>
@@ -550,10 +527,7 @@
                         <color key="backgroundColor" red="0.88172097370000002" green="1" blue="0.52817110820000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="rsc-AU-pg3" secondAttribute="trailing" id="6ap-RE-f8f"/>
-                            <constraint firstAttribute="trailing" secondItem="MHr-yk-hXq" secondAttribute="trailing" id="MFS-5e-mkP"/>
-                            <constraint firstItem="MHr-yk-hXq" firstAttribute="top" secondItem="QRA-Fz-JpJ" secondAttribute="bottom" constant="29" id="TSd-nm-Us8"/>
                             <constraint firstItem="rsc-AU-pg3" firstAttribute="top" secondItem="QRA-Fz-JpJ" secondAttribute="bottom" constant="80" id="UVx-lu-74a"/>
-                            <constraint firstItem="MHr-yk-hXq" firstAttribute="leading" secondItem="KpV-AI-uIS" secondAttribute="leading" id="dNt-mq-6lW"/>
                             <constraint firstItem="LTR-Je-cqq" firstAttribute="top" secondItem="rsc-AU-pg3" secondAttribute="bottom" constant="50" id="hov-hU-grZ"/>
                             <constraint firstItem="rsc-AU-pg3" firstAttribute="leading" secondItem="KpV-AI-uIS" secondAttribute="leading" id="xNN-Gk-K78"/>
                         </constraints>
@@ -733,9 +707,9 @@
         <image name="buttonnwop" width="490" height="156"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WGo-PH-cYA"/>
-        <segue reference="NXT-cW-wQy"/>
-        <segue reference="3Xy-zf-TCT"/>
         <segue reference="LDM-UG-8tz"/>
+        <segue reference="3Xy-zf-TCT"/>
+        <segue reference="NXT-cW-wQy"/>
+        <segue reference="SZ9-JP-0wo"/>
     </inferredMetricsTieBreakers>
 </document>

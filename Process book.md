@@ -12,3 +12,6 @@
 
 ##Dag 4
 - Maken design document.
+
+##Day 5
+- Zoeken naar een database. Cloudkit lijkt toch niet geschikt, wilt niet aangevinkt worden bij capabilities. Vermoedelijk komt het doordat ik geen apple developer account heb?
