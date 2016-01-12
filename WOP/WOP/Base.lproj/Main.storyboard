@@ -175,6 +175,7 @@
                                         </constraints>
                                         <state key="normal" image="Stop_2"/>
                                         <connections>
+                                            <action selector="stopButton:" destination="R1h-52-PfE" eventType="touchUpInside" id="XCh-oi-vQM"/>
                                             <segue destination="l5y-Yb-gL9" kind="show" id="RvY-eB-w4K"/>
                                         </connections>
                                     </button>
@@ -185,6 +186,9 @@
                                             <constraint firstAttribute="width" constant="50" id="EFW-NG-mXe"/>
                                         </constraints>
                                         <state key="normal" image="Pause"/>
+                                        <connections>
+                                            <action selector="breakButton:" destination="R1h-52-PfE" eventType="touchUpInside" id="Ls4-p0-BOy"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIv-sc-rrD">
                                         <rect key="frame" x="100" y="0.0" width="50" height="50"/>
@@ -193,6 +197,9 @@
                                             <constraint firstAttribute="height" constant="50" id="uOm-74-ebs"/>
                                         </constraints>
                                         <state key="normal" image="Play_3"/>
+                                        <connections>
+                                            <action selector="playButton:" destination="R1h-52-PfE" eventType="touchUpInside" id="HaR-yV-ufz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -264,6 +271,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="LabelTotalOverviewTime" destination="6fW-NG-nr3" id="7l2-ML-58B"/>
+                        <outlet property="labelTotalRunTime" destination="KgU-fm-jlj" id="rV2-Fu-k74"/>
                         <segue destination="BYZ-38-t0r" kind="show" id="WGo-PH-cYA"/>
                     </connections>
                 </viewController>
@@ -707,9 +716,9 @@
         <image name="buttonnwop" width="490" height="156"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LDM-UG-8tz"/>
-        <segue reference="3Xy-zf-TCT"/>
         <segue reference="NXT-cW-wQy"/>
-        <segue reference="SZ9-JP-0wo"/>
+        <segue reference="WGo-PH-cYA"/>
+        <segue reference="VhA-9a-Y3d"/>
+        <segue reference="LDM-UG-8tz"/>
     </inferredMetricsTieBreakers>
 </document>

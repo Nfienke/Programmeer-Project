@@ -50,3 +50,5 @@ Mocht de applicatie te simpel blijken zijn er een aantal features die ik wil toe
 # Cite
 
 - Achtergrond: http://stackoverflow.com/questions/25106784/how-to-set-a-background-image-to-a-uiview-in-swift
+- Timer: https://www.youtube.com/watch?v=g_bc4nSGuI4
+- Timer format: http://rshankar.com/simple-stopwatch-app-in-swift/
