@@ -19,3 +19,8 @@
 ##Dag 6
 - Timer gemaakt voor tijdens de Work Out. 
 - Dingen opzoeken voor beste database.
+- CLoudkit is voor mij niet handig/mogelijk, daarom ga ik gebruik maken van SQLlite Database. Het idee van een public database, laat ik daarbij even gaan. 
+
+##Dag 7
+- DB? todo
+- madelclasses voor martijn? todo
