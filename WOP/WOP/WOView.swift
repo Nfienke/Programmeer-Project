@@ -11,6 +11,7 @@ import UIKit
 
 class WOView: UIViewController {
     
+    
     var WO = WorkOutPlay() //model
     var timerTotalWO = NSTimer()
     var min = 0
@@ -62,6 +63,7 @@ class WOView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B4.png")!)
+        
     }
     
     override func didReceiveMemoryWarning() {

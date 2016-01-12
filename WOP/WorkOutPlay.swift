@@ -13,7 +13,7 @@ public class WorkOutPlay { //Moet dit public zijn?
     var timeTotal = 2 //database
     var timeWO = 1 //DB
     
-       var timerTotal = false
+    var timerTotal = false
     
   
 }

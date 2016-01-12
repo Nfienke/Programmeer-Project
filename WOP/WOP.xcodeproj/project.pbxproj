@@ -13,6 +13,8 @@
 		3214F8851C3D457E00D75A5F /* MyWOPOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3214F8841C3D457E00D75A5F /* MyWOPOverviewView.swift */; };
 		3214F8871C3D45AB00D75A5F /* WOView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3214F8861C3D45AB00D75A5F /* WOView.swift */; };
 		3214F8891C3D45BB00D75A5F /* WOEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3214F8881C3D45BB00D75A5F /* WOEndView.swift */; };
+		329EEB0B1C45446C00A925B1 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329EEB041C45444E00A925B1 /* SQLite.framework */; };
+		32DBEFFA1C45352C003571F8 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DBEFF91C45352C003571F8 /* DBModel.swift */; };
 		32E7BCF41C43B4E3003AC818 /* WorkOutPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7BCF31C43B4E3003AC818 /* WorkOutPlay.swift */; };
 		32F043861C3BBF4100A8F69A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F043851C3BBF4100A8F69A /* AppDelegate.swift */; };
 		32F043881C3BBF4100A8F69A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F043871C3BBF4100A8F69A /* MenuView.swift */; };
@@ -24,6 +26,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		329EEB031C45444E00A925B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 329EEAFC1C45444E00A925B1 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		329EEB051C45444E00A925B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 329EEAFC1C45444E00A925B1 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
+			remoteInfo = "SQLiteTests iOS";
+		};
+		329EEB071C45444E00A925B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 329EEAFC1C45444E00A925B1 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
+			remoteInfo = "SQLite Mac";
+		};
+		329EEB091C45444E00A925B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 329EEAFC1C45444E00A925B1 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
+			remoteInfo = "SQLiteTests Mac";
+		};
 		32F043971C3BBF4100A8F69A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 32F0437A1C3BBF4100A8F69A /* Project object */;
@@ -47,6 +77,8 @@
 		3214F8841C3D457E00D75A5F /* MyWOPOverviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWOPOverviewView.swift; sourceTree = "<group>"; };
 		3214F8861C3D45AB00D75A5F /* WOView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WOView.swift; sourceTree = "<group>"; };
 		3214F8881C3D45BB00D75A5F /* WOEndView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WOEndView.swift; sourceTree = "<group>"; };
+		329EEAFC1C45444E00A925B1 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = SQLite/SQLite.xcodeproj; sourceTree = "<group>"; };
+		32DBEFF91C45352C003571F8 /* DBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		32E7BCF31C43B4E3003AC818 /* WorkOutPlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkOutPlay.swift; sourceTree = "<group>"; };
 		32F043821C3BBF4100A8F69A /* WOP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WOP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F043851C3BBF4100A8F69A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				329EEB0B1C45446C00A925B1 /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,13 +142,26 @@
 			isa = PBXGroup;
 			children = (
 				32E7BCF31C43B4E3003AC818 /* WorkOutPlay.swift */,
+				32DBEFF91C45352C003571F8 /* DBModel.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		329EEAFD1C45444E00A925B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				329EEB041C45444E00A925B1 /* SQLite.framework */,
+				329EEB061C45444E00A925B1 /* SQLiteTests iOS.xctest */,
+				329EEB081C45444E00A925B1 /* SQLite.framework */,
+				329EEB0A1C45444E00A925B1 /* SQLiteTests Mac.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		32F043791C3BBF4100A8F69A = {
 			isa = PBXGroup;
 			children = (
+				329EEAFC1C45444E00A925B1 /* SQLite.xcodeproj */,
 				32F043841C3BBF4100A8F69A /* WOP */,
 				3214F87D1C3D43A700D75A5F /* Models */,
 				3214F87C1C3D437B00D75A5F /* Views */,
@@ -231,6 +277,7 @@
 				TargetAttributes = {
 					32F043811C3BBF4100A8F69A = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = LCAC83WXHX;
 					};
 					32F043951C3BBF4100A8F69A = {
 						CreatedOnToolsVersion = 7.2;
@@ -253,6 +300,12 @@
 			mainGroup = 32F043791C3BBF4100A8F69A;
 			productRefGroup = 32F043831C3BBF4100A8F69A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 329EEAFD1C45444E00A925B1 /* Products */;
+					ProjectRef = 329EEAFC1C45444E00A925B1 /* SQLite.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				32F043811C3BBF4100A8F69A /* WOP */,
@@ -261,6 +314,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		329EEB041C45444E00A925B1 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 329EEB031C45444E00A925B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		329EEB061C45444E00A925B1 /* SQLiteTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests iOS.xctest";
+			remoteRef = 329EEB051C45444E00A925B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		329EEB081C45444E00A925B1 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 329EEB071C45444E00A925B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		329EEB0A1C45444E00A925B1 /* SQLiteTests Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests Mac.xctest";
+			remoteRef = 329EEB091C45444E00A925B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		32F043801C3BBF4100A8F69A /* Resources */ = {
@@ -299,6 +383,7 @@
 				3214F8891C3D45BB00D75A5F /* WOEndView.swift in Sources */,
 				32E7BCF41C43B4E3003AC818 /* WorkOutPlay.swift in Sources */,
 				3214F8851C3D457E00D75A5F /* MyWOPOverviewView.swift in Sources */,
+				32DBEFFA1C45352C003571F8 /* DBModel.swift in Sources */,
 				3214F8811C3D444000D75A5F /* NewWOPView.swift in Sources */,
 				3214F8831C3D454A00D75A5F /* MyWOPView.swift in Sources */,
 				3214F8871C3D45AB00D75A5F /* WOView.swift in Sources */,
@@ -444,10 +529,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				INFOPLIST_FILE = WOP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.mprog.WOP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -455,10 +547,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				INFOPLIST_FILE = WOP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.mprog.WOP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

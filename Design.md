@@ -18,7 +18,7 @@
 <b>Classes and Databases</b><br>
 
 - Views, waarin alles aan de gebruiker wordt getoond.
-- Model, waarin de database en functies van de work out worden aangeroepen.
+- Model, waarin de database wordt aangeroepen en een model waar de functies van de work out worden aangeroepen.
 - Database, in cloudkit waar de work outs in worden opgeslagen.
 
 ![doc/Framework](doc/Framework.png)

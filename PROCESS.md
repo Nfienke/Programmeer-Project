@@ -22,5 +22,8 @@
 - CLoudkit is voor mij niet handig/mogelijk, daarom ga ik gebruik maken van SQLlite Database. Het idee van een public database, laat ik daarbij even gaan. 
 
 ##Dag 7
-- DB? todo
+- SQLite geinstalleerd, kostte veel moeite, waarschijnlijk was er een foute download. 
+SQLite install manual: https://github.com/stephencelis/SQLite.swift/blob/master/Documentation/Index.md#cocoapods
+
+##Dag 8
 - madelclasses voor martijn? todo

@@ -51,9 +51,6 @@
                                             <constraint firstAttribute="height" constant="50" id="U58-Cp-lJx"/>
                                         </constraints>
                                         <state key="normal" image="Play_2"/>
-                                        <connections>
-                                            <segue destination="R1h-52-PfE" kind="show" id="NXT-cW-wQy"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="equalSpacing" spacing="10"/>
@@ -130,7 +127,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="eiJ-Ne-iDT" kind="show" id="LDM-UG-8tz"/>
+                                    <segue destination="R1h-52-PfE" kind="show" id="Q6q-lO-QEt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -716,9 +713,8 @@
         <image name="buttonnwop" width="490" height="156"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NXT-cW-wQy"/>
-        <segue reference="WGo-PH-cYA"/>
-        <segue reference="VhA-9a-Y3d"/>
-        <segue reference="LDM-UG-8tz"/>
+        <segue reference="Q6q-lO-QEt"/>
+        <segue reference="3Xy-zf-TCT"/>
+        <segue reference="4eR-j9-9mg"/>
     </inferredMetricsTieBreakers>
 </document>
