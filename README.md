@@ -53,3 +53,4 @@ Mocht de applicatie te simpel blijken zijn er een aantal features die ik wil toe
 - Timer: https://www.youtube.com/watch?v=g_bc4nSGuI4
 - Timer format: http://rshankar.com/simple-stopwatch-app-in-swift/
 - SQLite install manual: https://github.com/stephencelis/SQLite.swift/blob/master/Documentation/Index.md#cocoapods
+- Segue met voorwaarde: http://jamesleist.com/ios-swift-tutorial-stop-segue-show-alert-text-box-empty/

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+
 
 
 
@@ -17,6 +19,8 @@ class MenuView: UIViewController {
         
         //http://stackoverflow.com/questions/25106784/how-to-set-a-background-image-to-a-uiview-in-swift
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B9.png")!)
+        
+
         
     }
 

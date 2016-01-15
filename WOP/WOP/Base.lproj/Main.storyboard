@@ -30,7 +30,7 @@
                                         </constraints>
                                         <state key="normal" image="buttonmwop"/>
                                         <connections>
-                                            <segue destination="hg5-uL-nPP" kind="show" id="VhA-9a-Y3d"/>
+                                            <segue destination="hg5-uL-nPP" kind="show" id="piP-Pa-fRs"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02a-BX-Xg5">
@@ -41,7 +41,7 @@
                                         </constraints>
                                         <state key="normal" image="buttonnwop"/>
                                         <connections>
-                                            <segue destination="pbm-6q-kVK" kind="show" id="vFV-0u-tuO"/>
+                                            <segue destination="pbm-6q-kVK" kind="show" id="Csx-DE-EKe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuh-6M-TAm">
@@ -51,6 +51,9 @@
                                             <constraint firstAttribute="height" constant="50" id="U58-Cp-lJx"/>
                                         </constraints>
                                         <state key="normal" image="Play_2"/>
+                                        <connections>
+                                            <segue destination="R1h-52-PfE" kind="show" id="j2R-bg-OLV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="equalSpacing" spacing="10"/>
@@ -79,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1223" y="4"/>
+            <point key="canvasLocation" x="-1231" y="-256"/>
         </scene>
         <!--MyWOP View-->
         <scene sceneID="JHY-64-3iG">
@@ -100,9 +103,6 @@
                                     <constraint firstAttribute="width" constant="69" id="NO4-y3-O57"/>
                                 </constraints>
                                 <state key="normal" image="buttonmenu"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="4eR-j9-9mg"/>
-                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9OU-xr-iuw">
                                 <rect key="frame" x="50" y="103" width="500" height="413"/>
@@ -127,7 +127,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="R1h-52-PfE" kind="show" id="Q6q-lO-QEt"/>
+                                    <segue destination="eiJ-Ne-iDT" kind="show" id="csc-ZI-Qsp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -173,7 +173,7 @@
                                         <state key="normal" image="Stop_2"/>
                                         <connections>
                                             <action selector="stopButton:" destination="R1h-52-PfE" eventType="touchUpInside" id="XCh-oi-vQM"/>
-                                            <segue destination="l5y-Yb-gL9" kind="show" id="RvY-eB-w4K"/>
+                                            <segue destination="l5y-Yb-gL9" kind="show" id="qXk-43-EAt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLT-ZP-daH">
@@ -270,12 +270,11 @@
                     <connections>
                         <outlet property="LabelTotalOverviewTime" destination="6fW-NG-nr3" id="7l2-ML-58B"/>
                         <outlet property="labelTotalRunTime" destination="KgU-fm-jlj" id="rV2-Fu-k74"/>
-                        <segue destination="BYZ-38-t0r" kind="show" id="WGo-PH-cYA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ky1-7e-fWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1227" y="-815"/>
+            <point key="canvasLocation" x="327" y="-799"/>
         </scene>
         <!--NewWOP View-->
         <scene sceneID="Agm-OL-YJA">
@@ -296,9 +295,6 @@
                                     <constraint firstAttribute="height" constant="32" id="NwG-rm-vc8"/>
                                 </constraints>
                                 <state key="normal" image="buttonmenu"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="w7r-cs-p8z"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work Outs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gL5-dI-IMh">
                                 <rect key="frame" x="0.0" y="49" width="600" height="43"/>
@@ -346,7 +342,7 @@
                                         </constraints>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="Button">
+                                                <fragment content="W1type">
                                                     <attributes>
                                                         <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                         <font key="NSFont" size="18" name="Arial-BoldMT"/>
@@ -355,6 +351,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="W1Type:" destination="9KH-1s-NY0" eventType="touchUpInside" id="rh8-nh-dAY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rrj-SS-LsF">
                                         <rect key="frame" x="220" y="60" width="150" height="50"/>
@@ -365,7 +364,7 @@
                                         </constraints>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="Button">
+                                                <fragment content="W2type">
                                                     <attributes>
                                                         <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                         <font key="NSFont" size="18" name="Arial-BoldMT"/>
@@ -384,7 +383,7 @@
                                         </constraints>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="Button">
+                                                <fragment content="W3type">
                                                     <attributes>
                                                         <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                         <font key="NSFont" size="18" name="Arial-BoldMT"/>
@@ -416,9 +415,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cy-Yc-cEK">
                                                 <rect key="frame" x="287" y="52" width="98" height="52"/>
                                                 <state key="normal" title="Finish" image="Right"/>
-                                                <connections>
-                                                    <segue destination="eiJ-Ne-iDT" kind="show" id="OKO-1o-BIV"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -481,9 +477,6 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="SZ9-JP-0wo"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ste-hJ-lVO">
                                         <rect key="frame" x="200" y="195" width="200" height="60"/>
@@ -503,9 +496,6 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
-                                        <connections>
-                                            <segue destination="hg5-uL-nPP" kind="show" id="3Xy-zf-TCT"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8K7-hx-OqW">
                                         <rect key="frame" x="200" y="390" width="200" height="60"/>
@@ -541,7 +531,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VQ-fc-1d1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2144" y="-836"/>
+            <point key="canvasLocation" x="1132" y="-799"/>
         </scene>
         <!--MyWOP Overview View-->
         <scene sceneID="wlY-a4-4aK">
@@ -558,9 +548,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1y-LQ-jyM">
                                 <rect key="frame" x="0.0" y="0.0" width="69" height="32"/>
                                 <state key="normal" image="buttonmenu"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="btC-tj-zpk"/>
-                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Mu-xV-yzU">
                                 <rect key="frame" x="0.0" y="60" width="600" height="540"/>
@@ -583,9 +570,6 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
-                                        <connections>
-                                            <segue destination="R1h-52-PfE" kind="show" id="heD-Db-MHs"/>
-                                        </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hG9-kc-GkU">
                                         <rect key="frame" x="90" y="85" width="420" height="371"/>
@@ -618,9 +602,6 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
-                                        <connections>
-                                            <segue destination="hg5-uL-nPP" kind="show" id="OkB-XN-bxE"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -663,9 +644,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSm-qb-Fq6">
                                 <rect key="frame" x="0.0" y="0.0" width="69" height="32"/>
                                 <state key="normal" image="buttonmenu"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="nWX-oO-7gL"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pyj-Om-Mx4">
                                 <rect key="frame" x="20" y="168" width="135" height="30"/>
@@ -689,12 +667,16 @@
                                 <rect key="frame" x="256" y="158" width="88" height="50"/>
                                 <state key="normal" title="Next" image="Right"/>
                                 <connections>
-                                    <segue destination="9KH-1s-NY0" kind="show" id="ZQb-Xd-QEo"/>
+                                    <action selector="NextNewWoButton:" destination="pbm-6q-kVK" eventType="touchUpInside" id="RhW-eI-y6v"/>
+                                    <segue destination="9KH-1s-NY0" kind="show" identifier="nameToNewWO" id="ONR-Vg-5vk"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.88172097370000002" green="1" blue="0.52817110820000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="nameNewField" destination="Pyj-Om-Mx4" id="uXM-jr-WnI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETr-22-Gyq" sceneMemberID="firstResponder"/>
             </objects>
@@ -712,9 +694,4 @@
         <image name="buttonmwop" width="488" height="158"/>
         <image name="buttonnwop" width="490" height="156"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Q6q-lO-QEt"/>
-        <segue reference="3Xy-zf-TCT"/>
-        <segue reference="4eR-j9-9mg"/>
-    </inferredMetricsTieBreakers>
 </document>

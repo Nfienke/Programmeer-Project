@@ -11,11 +11,17 @@ import UIKit
 
 class NewWOPView: UIViewController {
     
+    var NameWO = "" //throug segue from newname
+    
+    @IBAction func W1Type(sender: AnyObject) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B1.png")!)
-        
+        print(NameWO)
     }
     
     override func didReceiveMemoryWarning() {
