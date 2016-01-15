@@ -26,4 +26,11 @@
 SQLite install manual: https://github.com/stephencelis/SQLite.swift/blob/master/Documentation/Index.md#cocoapods
 
 ##Dag 8
-- madelclasses voor martijn? todo
+- Database werkte slecht. Veel mee bezig geweest om hem aan het praten te krijgen.
+
+##Dag 9 
+- Database werkt. Met dank aan Tim Baard. Nu ook wat functionaliteiten ermee kunnen installeren. 
+
+
+modelclasses voor martijn? todo
+- 
