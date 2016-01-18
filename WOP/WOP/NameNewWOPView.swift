@@ -11,9 +11,11 @@ import UIKit
 
 class NameNewWOPView: UIViewController {
     
+    
     @IBOutlet weak var nameNewField: UITextField!
     
     @IBAction func NextNewWoButton(sender: AnyObject) {
+        
     }
     
     // test if a name is entered
@@ -22,6 +24,9 @@ class NameNewWOPView: UIViewController {
         if identifier == "nameToNewWO" {
             
                 if nameNewField.text != "" {
+                    DB.valueNameWO = nameNewField.text!
+                    DB.insertNewWO()
+                    print(DB.valueIdWO)
                     return true
                 }
                 else{
@@ -29,14 +34,9 @@ class NameNewWOPView: UIViewController {
                     return false
                 }
         }
-        
+       
         return true
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let destinationVC = segue.destinationViewController as? NewWOPView{
-            destinationVC.NameWO = nameNewField.text!
-        }
+  
     }
 
     
@@ -50,3 +50,12 @@ class NameNewWOPView: UIViewController {
         
 }
 }
+
+//
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if let destinationVC = segue.destinationViewController as? NewWOPView{
+//
+//            destinationVC.NameWO = nameNewField.text!
+//
+//        }
+//    }

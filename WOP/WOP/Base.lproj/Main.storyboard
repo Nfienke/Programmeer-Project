@@ -104,10 +104,6 @@
                                 </constraints>
                                 <state key="normal" image="buttonmenu"/>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9OU-xr-iuw">
-                                <rect key="frame" x="50" y="103" width="500" height="413"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <button opaque="NO" contentMode="center" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eSf-Wo-my4">
                                 <rect key="frame" x="200" y="532" width="200" height="60"/>
                                 <color key="backgroundColor" red="0.69019607839999997" green="0.69019607839999997" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -127,18 +123,22 @@
                                     </attributedString>
                                 </state>
                                 <connections>
+                                    <action selector="GoToWoView:" destination="hg5-uL-nPP" eventType="touchUpInside" id="oGR-d9-D57"/>
                                     <segue destination="eiJ-Ne-iDT" kind="show" id="csc-ZI-Qsp"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hDe-Df-MuA">
+                                <rect key="frame" x="0.0" y="182" width="600" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hg5-uL-nPP" id="ATP-zL-GzE"/>
+                                    <outlet property="delegate" destination="hg5-uL-nPP" id="3aG-0x-Pf5"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.88172097370000002" green="1" blue="0.52817110820000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="9OU-xr-iuw" firstAttribute="leading" secondItem="5w5-dg-YYo" secondAttribute="leading" constant="50" id="1sX-MU-j4j"/>
                             <constraint firstItem="eSf-Wo-my4" firstAttribute="leading" secondItem="5w5-dg-YYo" secondAttribute="leading" constant="200" id="LBX-E4-uPa"/>
-                            <constraint firstItem="9OU-xr-iuw" firstAttribute="top" secondItem="99Y-uy-p1O" secondAttribute="bottom" constant="83" id="NMn-Lc-scq"/>
                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eSf-Wo-my4" secondAttribute="trailing" constant="200" id="OvX-AS-7qF"/>
-                            <constraint firstItem="eSf-Wo-my4" firstAttribute="top" secondItem="9OU-xr-iuw" secondAttribute="bottom" constant="16" id="Ppx-SP-plj"/>
-                            <constraint firstAttribute="trailing" secondItem="9OU-xr-iuw" secondAttribute="trailing" constant="50" id="b5P-QQ-mzG"/>
                             <constraint firstItem="GMX-EV-ncb" firstAttribute="top" secondItem="eSf-Wo-my4" secondAttribute="bottom" constant="8" id="fV8-6m-MeA"/>
                             <constraint firstItem="l7u-9w-wwY" firstAttribute="leading" secondItem="5w5-dg-YYo" secondAttribute="leading" id="wbf-5T-xvy"/>
                             <constraint firstItem="l7u-9w-wwY" firstAttribute="top" secondItem="5w5-dg-YYo" secondAttribute="top" id="xMe-Jg-oad"/>
@@ -327,6 +327,9 @@
                                             <segment title="30"/>
                                         </segments>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="minutesChanger:" destination="9KH-1s-NY0" eventType="valueChanged" id="QN3-SA-Yt3"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                             </stackView>
@@ -345,6 +348,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcc-fo-BBy">
                                                 <rect key="frame" x="300" y="0.0" width="85" height="52"/>
                                                 <state key="normal" title="Add" image="Plus Math"/>
+                                                <connections>
+                                                    <action selector="addButton:" destination="9KH-1s-NY0" eventType="touchUpInside" id="KiW-XV-QJ0"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cy-Yc-cEK">
                                                 <rect key="frame" x="287" y="52" width="98" height="52"/>
@@ -354,75 +360,23 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="center" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rIS-eU-fFn">
-                                <rect key="frame" x="5" y="100" width="590" height="56"/>
+                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rIS-eU-fFn">
+                                <rect key="frame" x="5" y="100" width="590" height="216"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ifx-nV-z0D">
-                                        <rect key="frame" x="12" y="0.0" width="567" height="56"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jM7-Ov-WLt">
-                                            <size key="itemSize" width="50" height="50"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MSP-1I-Po4">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8GC-Xf-jvW">
-                                                <rect key="frame" x="64.5" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SyW-LX-6ga">
-                                                <rect key="frame" x="129.5" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bgi-VT-5lm">
-                                                <rect key="frame" x="194" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Eox-kE-R8R">
-                                                <rect key="frame" x="258.5" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OXo-Lk-gks">
-                                                <rect key="frame" x="323" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mtg-iX-5Z7">
+                                        <rect key="frame" x="0.0" y="0.0" width="590" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="9KH-1s-NY0" id="EaN-FN-6TO"/>
+                                            <outlet property="delegate" destination="9KH-1s-NY0" id="c4m-YM-xre"/>
+                                        </connections>
+                                    </pickerView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Mtg-iX-5Z7" firstAttribute="top" secondItem="rIS-eU-fFn" secondAttribute="top" id="2Gk-Yu-tv6"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mtg-iX-5Z7" secondAttribute="bottom" id="Raf-bt-n56"/>
+                                    <constraint firstItem="Mtg-iX-5Z7" firstAttribute="leading" secondItem="rIS-eU-fFn" secondAttribute="leading" id="bVf-1c-t7E"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mtg-iX-5Z7" secondAttribute="trailing" id="ciE-Qm-HyO"/>
+                                </constraints>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="equalSpacing"/>
                             </stackView>
                         </subviews>
@@ -444,6 +398,9 @@
                             <constraint firstItem="rIS-eU-fFn" firstAttribute="top" secondItem="yWP-0b-hfB" secondAttribute="bottom" constant="80" id="xwt-SC-xIH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="minutesBar" destination="EUn-6A-q56" id="4GV-1t-PFn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K5h-a0-0Nr" sceneMemberID="firstResponder"/>
             </objects>
@@ -588,6 +545,10 @@
                                         <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="sectionIndexTrackingBackgroundColor" red="0.88172097370000002" green="1" blue="0.52817110820000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <sections/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="eiJ-Ne-iDT" id="jth-qx-UcW"/>
+                                            <outlet property="delegate" destination="eiJ-Ne-iDT" id="I3K-WQ-qxl"/>
+                                        </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="center" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HTb-QS-6qZ">
                                         <rect key="frame" x="200" y="480" width="200" height="60"/>
@@ -607,6 +568,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <segue destination="hg5-uL-nPP" kind="show" id="uAN-PW-vXQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -629,6 +593,9 @@
                             <constraint firstItem="6Mu-xV-yzU" firstAttribute="top" secondItem="5X1-ir-kb8" secondAttribute="bottom" constant="40" id="nAu-RW-cCr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableWoOverview" destination="hG9-kc-GkU" id="gF6-8N-1Tg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Qe-H5-F0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -699,4 +666,7 @@
         <image name="buttonmwop" width="488" height="158"/>
         <image name="buttonnwop" width="490" height="156"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="uAN-PW-vXQ"/>
+    </inferredMetricsTieBreakers>
 </document>

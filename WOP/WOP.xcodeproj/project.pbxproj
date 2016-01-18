@@ -126,13 +126,13 @@
 			children = (
 				32F0438E1C3BBF4100A8F69A /* LaunchScreen.storyboard */,
 				32F043891C3BBF4100A8F69A /* Main.storyboard */,
-				3214F8821C3D454A00D75A5F /* MyWOPView.swift */,
 				32F043871C3BBF4100A8F69A /* MenuView.swift */,
-				3214F8881C3D45BB00D75A5F /* WOEndView.swift */,
+				3214F8821C3D454A00D75A5F /* MyWOPView.swift */,
+				3214F8841C3D457E00D75A5F /* MyWOPOverviewView.swift */,
 				3214F8861C3D45AB00D75A5F /* WOView.swift */,
+				3214F8881C3D45BB00D75A5F /* WOEndView.swift */,
 				3214F87E1C3D442300D75A5F /* NameNewWOPView.swift */,
 				3214F8801C3D444000D75A5F /* NewWOPView.swift */,
-				3214F8841C3D457E00D75A5F /* MyWOPOverviewView.swift */,
 			);
 			name = Views;
 			path = WOP;

@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         DBModel.sharedInstance.Database()
         DBModel.sharedInstance.createTable()
+        DBModel.sharedInstance.createTable2()
         
         // Override point for customization after application launch.
         

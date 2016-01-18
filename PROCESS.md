@@ -31,6 +31,16 @@ SQLite install manual: https://github.com/stephencelis/SQLite.swift/blob/master/
 ##Dag 9 
 - Database werkt. Met dank aan Tim Baard. Nu ook wat functionaliteiten ermee kunnen installeren. 
 
+##Dag 10
+- inleveren alpha version.
+- Veel nog bezig geweest met database, maar lukte niet echt.
+
+##Dag 11
+- Database insert zoals het hoort en selecteert inmiddels de de data die nodig is.
+daarvoor heb ik wel de inhoud van de database aangepast. Ook een aantal keer opniew de tabellen aangemaakt enz. Veel op papier eerst de tabellen getekend en 'logisch' na proberen te denken over wat en hoe ik de data ging inserten en ophalen. 
+- Informatie opgezocht over geluid afspelen in swift. (nog in process)
+
+
 
 modelclasses voor martijn? todo
 - 

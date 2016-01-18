@@ -11,15 +11,46 @@ import UIKit
 
 class MyWOPView: UIViewController {
     
+    var WOoverview = [String]()
+    
+    @IBAction func GoToWoView(sender: UIButton) {
+        
+        DB.selectWOName()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        DB.selectViewWO()
+        //DB.selectViewWO()
+        WOoverview = DB.WOview
+     
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B10.png")!)
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
+    
+    //pickerview
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return WOoverview.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return WOoverview[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int){
+        print(WOoverview[row])
+        DB.valueNameWO = WOoverview[row]
+        
+        self.view.endEditing(true)
+    }
+    
+
 }
