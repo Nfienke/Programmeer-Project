@@ -16,7 +16,7 @@ class MenuView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DB.selectWO()
+        //DB.selectWO()
         
         //http://stackoverflow.com/questions/25106784/how-to-set-a-background-image-to-a-uiview-in-swift
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B9.png")!)

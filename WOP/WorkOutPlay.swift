@@ -10,13 +10,24 @@ import Foundation
 import UIKit
 var WO = WorkOutPlay()
 
-public class WorkOutPlay { //Moet dit public zijn?
+public class WorkOutPlay {
     
+    var timeTotal: Int64 = Int64() // from database total time
+    var timeWO = Int64() // time of wotype
+    var WOtype = String()
+    var intIndex = 0
     
-    var timeTotal = 6 // from database
-    var timeWO = 1 //from DB
-    
-    
-        
-    
+    func playWO() {
+      
+        for (_,v) in DB.WODict {
+            timeTotal += v
+            
+            //http://stackoverflow.com/questions/24640990/how-do-i-get-the-key-at-a-specific-index-from-a-dictionary-in-swift
+            let index = DB.WODict.startIndex.advancedBy(intIndex)
+           
+            timeWO = DB.WODict.values[index]
+            WOtype = DB.WODict.keys[index]
+            
+        }
+    }
 }

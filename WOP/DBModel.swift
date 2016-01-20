@@ -37,6 +37,7 @@ public class DBModel{
     //
     var WOview = [String]()
     var WOOverview = [String]()
+    var WODict = Dictionary <String, Int64>()
     
     //http://stackoverflow.com/questions/34001805/how-to-declare-database-connection-variable-globally-in-swift
     // https://github.com/stephencelis/SQLite.swift/blob/master/Documentation/Index.md#cocoapods
@@ -61,7 +62,7 @@ public class DBModel{
                 t.column(nameWO, unique: true)
                 })
 
-            print("Table create gelukt") // kan eruit
+            //print("Table create gelukt") // kan eruit
         }
         
         catch{
@@ -80,7 +81,7 @@ public class DBModel{
                 t.column(min)
                 })
             
-            print("Table 2 create gelukt") // kan eruit
+            //print("Table 2 create gelukt") // kan eruit
         }
             
         catch{
@@ -97,10 +98,10 @@ public class DBModel{
         do {
             let idWO = try db.run(Table1.insert(nameWO <- valueNameWO))
             valueIdWO = idWO
-            print("inserted idWO: \(idWO)")
+            //print("inserted idWO: \(idWO)")
             //print("h1",valueIdWO)
             //print("h2 \(nameWO)")
-            print(" insert gelukt")// kan eruit
+            //print(" insert gelukt")// kan eruit
         }
         
         catch {
@@ -112,11 +113,11 @@ public class DBModel{
             
             do{
                 try db.run(Table2WO.insert(idWO <- valueIdWO, WOType <- valueWOType, min <- valueMin))
-                print("insert gelukt")
-                print(idWO)
-                print(WOType)
-                print(min)
-                
+//                print("insert gelukt")
+//                print(idWO)
+//                print(WOType)
+//                print(min)
+//                
             }
             catch {
                 print("insertion failed: \(error)")
@@ -129,9 +130,9 @@ public class DBModel{
                 print("idWO: \(row[idWO]), NameWO: \(row[nameWO])")
                 print("Selection completed")//kan eruit
             }
-            for row in try db.prepare(Table2WO){
-                print("idWO: \(row[idWO]), WOType: \(row[WOType]), min: \(row[min])")
-                print("Selection  2 completed")//kan eruit
+            for _ in try db.prepare(Table2WO){
+               // print("idWO: \(row[idWO]), WOType: \(row[WOType]), min: \(row[min])")
+               // print("Selection  2 completed")//kan eruit
             }
 
         }
@@ -142,36 +143,36 @@ public class DBModel{
     }
     
     func selectViewWO() { // for overview of the wo's.
+            //if niet is empty
         do{
             for row in try db.prepare(Table1){
                 print("id WO: \(row[idWO]), Name WO: \(row[nameWO])")
                 WOview.append("\(row[nameWO]!)")
                 
             }
-            print("selection is completed")
+           // print("selection is completed")
         }
         catch{
             print("selection failed: \(error)")
         }
     }
     
-    func selectWOName() { // select info about the wo selecting on name.
+    func selectWOName() { // select info about the wo selecting on name.//var WODict = Dictionary <String, Int64>()
         do{
             for row in try db.prepare(Table1){
                 Table1.filter(nameWO.like(valueNameWO))
-                //print(row[idWO])
                 valueIdWO = row[idWO]
             }
             for row in try db.prepare(Table2WO){
                 Table2WO.filter(idWO == valueIdWO)
                 valueWOType = row[WOType]!
-                //print(valueWOType,"h1")
                 valueMin = row[min]
-                //print(valueMin,"h2")
                 WOOverview.append("WorkOut: \(valueWOType) Minutes: \(valueMin)")
+                WODict[valueWOType] = valueMin
+                print("dict", WODict)
             }
-            print("Selection completed")
-            print("wooverview:", WOOverview)
+            //print("Selection completed")
+            //print("wooverview:", WOOverview)
 
         }
             

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Nienke Pot. All rights reserved.
 //
 
-import Foundation
+
 import UIKit
 import AVFoundation
 
@@ -15,20 +15,34 @@ class WOView: UIViewController {
     //http://stackoverflow.com/questions/24393495/playing-a-sound-with-avaudioplayer
     //https://www.hackingwithswift.com/example-code/media/how-to-play-sounds-using-avaudioplayer
     var audio: AVAudioPlayer!
-    
+    @IBOutlet weak var labelExercise: UILabel!
+    //totalWO
     @IBOutlet weak var labelTotalRunTime: UILabel!
-    @IBOutlet weak var LabelTotalOverviewTime: UILabel!
+    @IBOutlet weak var labelTotalOverviewTime: UILabel!
+    //wo
+    @IBOutlet weak var labelRunTime: UILabel!
+    @IBOutlet weak var labelOverviewTime: UILabel!
+    
+    //Timer
+    // timer basics: https://www.youtube.com/watch?v=g_bc4nSGuI4
+    var timerTotal = false
+    var timerTotalWO = NSTimer()
+    var min = Int64()
+    var sec = 0
+    var min2 = Int64()
+    var sec2 = 0
     
     @IBAction func breakButton(sender: UIButton) {
         if timerTotal == true{
             timerTotal = false
             onOffTimer()
-            let path = NSBundle.mainBundle().pathForResource("wosound.mp3", ofType:nil)!
-            let url = NSURL(fileURLWithPath: WOP)
+            
+            let path = NSBundle.mainBundle().pathForResource("wosound", ofType: "mp3")
+            let url = NSURL(fileURLWithPath: path!)// is dit nodig? de path
             
             do {
                 let sound = try AVAudioPlayer(contentsOfURL: url)
-                bombSoundEffect = sound
+                audio = sound
                 sound.play()
             } catch {
                 // couldn't load file :(
@@ -45,56 +59,81 @@ class WOView: UIViewController {
     
     
     @IBAction func playButton(sender: UIButton) {
+     
         if timerTotal == false{
             timerTotal = true
             onOffTimer()
+            
+            //
         }
-        
-       
+    
     }
     
-    var min = 0
-    var sec = 0
-    var timerTotalWO = NSTimer()
-    var timerTotal = false
     
-    // timer basics: https://www.youtube.com/watch?v=g_bc4nSGuI4
+    func onOffTimer() {
+        if timerTotal == true{
+            
+            timerTotalWO = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "WOtimer", userInfo: nil, repeats: true)
+        }
+        
+        if timerTotal == false {
+            
+            timerTotalWO.invalidate()
+        }
+    }
     
     func WOtimer() {
         sec += 1
+        sec2 += 1
+        labelTotalRunTime.text! = "\(String(format:"%02d", min)):\(String(format:"%02d", sec))"
+        labelRunTime.text! = "\(String(format:"%02d", min2)):\(String(format:"%02d", sec2))"//
+        
+        
         if sec == 60{
             sec = 0
+            sec2 = 0
             min += 1
+            min2 += 1
             
         }
+        
+        
         // Time of total work out has ended.
         if min == WO.timeTotal{
             timerTotalWO.invalidate()
             timerTotal = false
             //segue to WOEndView
         }
-        labelTotalRunTime.text! = "\(String(format:"%02d", min)):\(String(format:"%02d", sec))"     // format: http://rshankar.com/simple-stopwatch-app-in-swift/
-    }
+        //
+        if min == WO.timeWO{
+            sec2 = 0
+            min2 = 0
+            WO.intIndex += 1
+             WO.playWO()
+            labelExercise.text! = WO.WOtype
+           
 
-    func onOffTimer() {
-        if timerTotal == true{
-            timerTotalWO = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:Selector("WOtimer"), userInfo: nil, repeats: true)
             
         }
-        if timerTotal == false {
-            self.timerTotalWO.invalidate()
-        }
     }
-
     
-    
-    
+ 
+ 
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B4.png")!)
+        WO.playWO()
         
-       
+        labelExercise.text! = WO.WOtype
         
+        // format: http://rshankar.com/simple-stopwatch-app-in-swift/
+        labelTotalOverviewTime.text! = "\(String(format:"%02d", WO.timeTotal)):00"
+        labelOverviewTime.text! = "\(String(format:"%02d", WO.timeWO)):00" //?
+        labelTotalRunTime.text! = "\(String(format:"%02d", min)):\(String(format:"%02d", sec))"
+        labelRunTime.text! = "\(String(format:"%02d", min)):\(String(format:"%02d", sec))"
+
+  
     }
     
     override func didReceiveMemoryWarning() {

@@ -233,7 +233,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RCs-DC-Mug">
                                         <rect key="frame" x="0.0" y="122" width="560" height="122"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excersice" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="su2-lg-pka">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excercise" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="su2-lg-pka">
                                                 <rect key="frame" x="196" y="0.0" width="169" height="41"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -268,7 +268,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="LabelTotalOverviewTime" destination="6fW-NG-nr3" id="7l2-ML-58B"/>
+                        <outlet property="labelExercise" destination="su2-lg-pka" id="OvB-UZ-1Op"/>
+                        <outlet property="labelOverviewTime" destination="xDt-SN-lNq" id="za0-Z6-9H9"/>
+                        <outlet property="labelRunTime" destination="EQ0-LJ-c5C" id="iBM-Tw-x9I"/>
+                        <outlet property="labelTotalOverviewTime" destination="6fW-NG-nr3" id="JjF-9T-59Z"/>
                         <outlet property="labelTotalRunTime" destination="KgU-fm-jlj" id="rV2-Fu-k74"/>
                     </connections>
                 </viewController>
@@ -532,6 +535,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <segue destination="R1h-52-PfE" kind="show" id="UXE-V6-9P4"/>
+                                        </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hG9-kc-GkU">
                                         <rect key="frame" x="90" y="85" width="420" height="371"/>
@@ -667,6 +673,7 @@
         <image name="buttonnwop" width="490" height="156"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="UXE-V6-9P4"/>
         <segue reference="uAN-PW-vXQ"/>
     </inferredMetricsTieBreakers>
 </document>

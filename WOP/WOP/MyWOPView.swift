@@ -20,9 +20,16 @@ class MyWOPView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DB.selectViewWO()
-        //DB.selectViewWO()
+        if DB.WOview == []{ //date ie wel up bij nieuwe insert?
+            DB.selectViewWO()
+        }
         WOoverview = DB.WOview
+        //DB.selectViewWO()
+        
+        
+        
+    
+        
      
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B10.png")!)
     }
@@ -46,7 +53,7 @@ class MyWOPView: UIViewController {
     }
     
     func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int){
-        print(WOoverview[row])
+        //print(WOoverview[row])
         DB.valueNameWO = WOoverview[row]
         
         self.view.endEditing(true)

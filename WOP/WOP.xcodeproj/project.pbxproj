@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32013D5D1C4E3AE500CBA376 /* wosound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32013D5C1C4E3AE500CBA376 /* wosound.mp3 */; };
 		3214F87F1C3D442300D75A5F /* NameNewWOPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3214F87E1C3D442300D75A5F /* NameNewWOPView.swift */; };
 		3214F8811C3D444000D75A5F /* NewWOPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3214F8801C3D444000D75A5F /* NewWOPView.swift */; };
 		3214F8831C3D454A00D75A5F /* MyWOPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3214F8821C3D454A00D75A5F /* MyWOPView.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32013D5C1C4E3AE500CBA376 /* wosound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = wosound.mp3; path = ../wosound.mp3; sourceTree = "<group>"; };
 		3214F87E1C3D442300D75A5F /* NameNewWOPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameNewWOPView.swift; sourceTree = "<group>"; };
 		3214F8801C3D444000D75A5F /* NewWOPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWOPView.swift; sourceTree = "<group>"; };
 		3214F8821C3D454A00D75A5F /* MyWOPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWOPView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				32F043851C3BBF4100A8F69A /* AppDelegate.swift */,
 				32F0438C1C3BBF4100A8F69A /* Assets.xcassets */,
+				32013D5C1C4E3AE500CBA376 /* wosound.mp3 */,
 				32F043911C3BBF4100A8F69A /* Info.plist */,
 			);
 			path = WOP;
@@ -351,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32013D5D1C4E3AE500CBA376 /* wosound.mp3 in Resources */,
 				32F043901C3BBF4100A8F69A /* LaunchScreen.storyboard in Resources */,
 				32F0438D1C3BBF4100A8F69A /* Assets.xcassets in Resources */,
 				32F0438B1C3BBF4100A8F69A /* Main.storyboard in Resources */,
