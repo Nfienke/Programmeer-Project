@@ -37,7 +37,7 @@ public class DBModel{
     //
     var WOview = [String]()
     var WOOverview = [String]()
-    var WODict = Dictionary <String, Int64>()
+    var WODict = Dictionary <String, Int>()
     
     //http://stackoverflow.com/questions/34001805/how-to-declare-database-connection-variable-globally-in-swift
     // https://github.com/stephencelis/SQLite.swift/blob/master/Documentation/Index.md#cocoapods
@@ -113,26 +113,21 @@ public class DBModel{
             
             do{
                 try db.run(Table2WO.insert(idWO <- valueIdWO, WOType <- valueWOType, min <- valueMin))
-//                print("insert gelukt")
-//                print(idWO)
-//                print(WOType)
-//                print(min)
-//                
             }
             catch {
                 print("insertion failed: \(error)")
             }
      }
     
-    func selectWO() { // niet nuttig alleen voor testen
+    func selectWO() {  //testen
         do{
             for row in try db.prepare(Table1){
                 print("idWO: \(row[idWO]), NameWO: \(row[nameWO])")
                 print("Selection completed")//kan eruit
             }
-            for _ in try db.prepare(Table2WO){
-               // print("idWO: \(row[idWO]), WOType: \(row[WOType]), min: \(row[min])")
-               // print("Selection  2 completed")//kan eruit
+            for row in try db.prepare(Table2WO){
+                print("idWO: \(row[idWO]), WOType: \(row[WOType]), min: \(row[min])")
+                print("Selection  2 completed")//kan eruit
             }
 
         }
@@ -144,9 +139,10 @@ public class DBModel{
     
     func selectViewWO() { // for overview of the wo's.
             //if niet is empty
+       
         do{
             for row in try db.prepare(Table1){
-                print("id WO: \(row[idWO]), Name WO: \(row[nameWO])")
+                //print("id WO: \(row[idWO]), Name WO: \(row[nameWO])")
                 WOview.append("\(row[nameWO]!)")
                 
             }
@@ -157,31 +153,61 @@ public class DBModel{
         }
     }
     
-    func selectWOName() { // select info about the wo selecting on name.//var WODict = Dictionary <String, Int64>()
+    func selectWOName() { // select info about the wo selecting on name.
+        WOOverview = []
+        let WOselect = Table1.filter(nameWO.like(DB.valueNameWO))
         do{
-            for row in try db.prepare(Table1){
-                Table1.filter(nameWO.like(valueNameWO))
+
+            for row in try db.prepare(WOselect){
                 valueIdWO = row[idWO]
+        
             }
-            for row in try db.prepare(Table2WO){
-                Table2WO.filter(idWO == valueIdWO)
+            let WOTypeSelect = Table2WO.filter(idWO == valueIdWO)
+            for row in try db.prepare(WOTypeSelect){
                 valueWOType = row[WOType]!
                 valueMin = row[min]
+               
+                
                 WOOverview.append("WorkOut: \(valueWOType) Minutes: \(valueMin)")
-                WODict[valueWOType] = valueMin
-                print("dict", WODict)
+                WODict[valueWOType] = Int(valueMin)
+                
             }
-            //print("Selection completed")
-            //print("wooverview:", WOOverview)
-
         }
             
         catch{
             print("selection failed: \(error)")
         }
-
+    }
+    
+    func removeWO() { // ook in table2 nog removen
+        let WOselect = Table1.filter(nameWO.like(DB.valueNameWO))
+        
+        //let WO2remove = Table2WO.filter(idWO == 13)
+        var id = Int64()
+        
+        do {
+            for row in try db.prepare(WOselect){
+                id = row[idWO]
+                
+            }
+            let WOremove = Table1.filter(nameWO.like(DB.valueNameWO))
+            if try db.run(WOremove.delete()) > 0 {
+                print("deleted WO")//
+            }
+            let WO2remove = Table2WO.filter(idWO == id)
+            if try db.run(WO2remove.delete()) > 0 {
+              //
+            }
+               
             
-       
+            else {
+                print("WO not found")
+            }
+        } catch {
+            print("delete failed: \(error)")
+        }
+        
+    
     }
     
 }

@@ -38,7 +38,12 @@ SQLite install manual: https://github.com/stephencelis/SQLite.swift/blob/master/
 ##Dag 11
 - Database insert zoals het hoort en selecteert inmiddels de de data die nodig is.
 daarvoor heb ik wel de inhoud van de database aangepast. Ook een aantal keer opniew de tabellen aangemaakt enz. Veel op papier eerst de tabellen getekend en 'logisch' na proberen te denken over wat en hoe ik de data ging inserten en ophalen. 
-- Informatie opgezocht over geluid afspelen in swift. (nog in process)
+- Informatie opgezocht over geluid afspelen in swift. 
+
+##Dag 12
+- De app speelt de Work out nu goed af. 
+- De timer en geluid functies staan in de view class en niet in het model. Dit is gedaan omdat de de timer rechtstreeks een label waar de tijd op wordt afgebeeld aanpast. Anders zou je het met een onwijze omweg moeten doen. 
+- De insertion bij het aanmaken van een nieuwe work out, blijkt toch niet goed te werken, dus daar ga ik morgen mee aan de slag. 
 
 
 

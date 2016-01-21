@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MyWOPView: UIViewController {
+class MyWOPView: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     var WOoverview = [String]()
     
@@ -18,19 +18,18 @@ class MyWOPView: UIViewController {
         DB.selectWOName()
     }
     
+    @IBOutlet weak var OverviewTable: UITableView!
+    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if DB.WOview == []{ //date ie wel up bij nieuwe insert?
-            DB.selectViewWO()
-        }
+        DB.WOview = []
+        DB.selectViewWO()
+        
         WOoverview = DB.WOview
+        print (WOoverview)
         //DB.selectViewWO()
-        
-        
-        
-    
-        
-     
+        self.OverviewTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B10.png")!)
     }
     
@@ -39,25 +38,38 @@ class MyWOPView: UIViewController {
         
     }
     
-    //pickerview
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+    //table
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return  WOoverview.count
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return WOoverview.count
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = self.OverviewTable.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        cell.textLabel?.text = WOoverview[indexPath.row]
+        return cell
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return WOoverview[row]
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //print("You selected cell #(indexPath.row)!")
+        DB.valueNameWO = WOoverview[indexPath.row]
+        print(DB.valueNameWO)
     }
     
-    func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int){
-        //print(WOoverview[row])
-        DB.valueNameWO = WOoverview[row]
-        
-        self.view.endEditing(true)
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            
+            DB.valueNameWO = WOoverview[indexPath.row]
+            WOoverview.removeAtIndex(indexPath.row)
+            DB.removeWO()
+            OverviewTable.reloadData()
+        }
+
     }
+   
+    
+   
     
 
 }

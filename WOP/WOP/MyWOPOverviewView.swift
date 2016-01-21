@@ -13,6 +13,11 @@ class MyWOPOverviewView: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var tableWoOverview: UITableView!
     
+    @IBAction func startWOButton(sender: UIButton) {
+        NSUserDefaults.standardUserDefaults().setObject(DB.WODict, forKey: "WODict")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("workout", DB.valueIdWO, DB.valueNameWO, DB.valueWOType, DB.valueMin)
@@ -38,5 +43,8 @@ class MyWOPOverviewView: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //print("You selected cell #\(indexPath.row)!")
     }
+    
+
+    
 
 }

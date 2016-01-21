@@ -25,6 +25,7 @@ class NameNewWOPView: UIViewController {
             
                 if nameNewField.text != "" {
                     DB.valueNameWO = nameNewField.text!
+                    
                     DB.insertNewWO()
                     print(DB.valueIdWO)
                     return true

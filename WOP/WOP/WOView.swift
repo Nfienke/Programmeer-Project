@@ -29,25 +29,13 @@ class WOView: UIViewController {
     var timerTotalWO = NSTimer()
     var min = Int64()
     var sec = 0
-    var min2 = Int64()
+    var min2 = Int()
     var sec2 = 0
     
     @IBAction func breakButton(sender: UIButton) {
         if timerTotal == true{
             timerTotal = false
             onOffTimer()
-            
-            let path = NSBundle.mainBundle().pathForResource("wosound", ofType: "mp3")
-            let url = NSURL(fileURLWithPath: path!)// is dit nodig? de path
-            
-            do {
-                let sound = try AVAudioPlayer(contentsOfURL: url)
-                audio = sound
-                sound.play()
-            } catch {
-                // couldn't load file :(
-            }
-
         }
     }
     
@@ -73,7 +61,7 @@ class WOView: UIViewController {
     func onOffTimer() {
         if timerTotal == true{
             
-            timerTotalWO = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "WOtimer", userInfo: nil, repeats: true)
+            timerTotalWO = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "WOtimer", userInfo: nil, repeats: true)
         }
         
         if timerTotal == false {
@@ -83,6 +71,8 @@ class WOView: UIViewController {
     }
     
     func WOtimer() {
+        labelExercise.text! = WO.WOtype
+        labelOverviewTime.text! = "\(String(format:"%02d", WO.timeWO)):00"
         sec += 1
         sec2 += 1
         labelTotalRunTime.text! = "\(String(format:"%02d", min)):\(String(format:"%02d", sec))"
@@ -90,40 +80,56 @@ class WOView: UIViewController {
         
         
         if sec == 60{
+            print(WO.timeTotal)
             sec = 0
             sec2 = 0
             min += 1
             min2 += 1
-            
+            // Time of total work out has ended.
+            if min == WO.timeTotal{
+                //timerTotalWO.invalidate()
+                timerTotal = false
+                print("einde")
+                //segue to WOEndView
+            }
         }
-        
-        
-        // Time of total work out has ended.
-        if min == WO.timeTotal{
-            timerTotalWO.invalidate()
-            timerTotal = false
-            //segue to WOEndView
-        }
-        //
-        if min == WO.timeWO{
-            sec2 = 0
+        //end of an exercise
+        if min2 == WO.timeWO{
+            playSound()
             min2 = 0
             WO.intIndex += 1
-             WO.playWO()
-            labelExercise.text! = WO.WOtype
-           
-
-            
+            WO.playWO()
         }
+
+       
     }
     
+    func playSound()    {
+        
+        let path = NSBundle.mainBundle().pathForResource("wosound", ofType: "mp3")
+        let url = NSURL(fileURLWithPath: path!)// is dit nodig? de path
+        
+        do {
+        let sound = try AVAudioPlayer(contentsOfURL: url)
+        audio = sound
+        sound.play()
+        } catch {
+        // couldn't load file :(
+        }
+    }
  
  
   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B4.png")!)
+        //NSUserdefaults laden
+        if NSUserDefaults.standardUserDefaults().objectForKey("WODict") != nil{
+            DB.WODict = NSUserDefaults.standardUserDefaults().objectForKey("WODict") as! Dictionary//laden
+        }
         WO.playWO()
+        //
+       //opslaan
         
         labelExercise.text! = WO.WOtype
         
@@ -132,6 +138,9 @@ class WOView: UIViewController {
         labelOverviewTime.text! = "\(String(format:"%02d", WO.timeWO)):00" //?
         labelTotalRunTime.text! = "\(String(format:"%02d", min)):\(String(format:"%02d", sec))"
         labelRunTime.text! = "\(String(format:"%02d", min)):\(String(format:"%02d", sec))"
+        
+      
+
 
   
     }
