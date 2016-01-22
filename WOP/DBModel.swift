@@ -7,7 +7,7 @@
 //
 //http://stackoverflow.com/questions/34001805/how-to-declare-database-connection-variable-globally-in-swift
 // https://github.com/stephencelis/SQLite.swift/blob/master/Documentation/Index.md#cocoapods
-//tim baard heeft me geholpen om de database iets meer op orde en vooral wat netter te krijgen. //in progress.
+//Tim Baard heeft me geholpen om de database iets meer op orde en vooral wat netter te krijgen. 
 
 import Foundation
 import SQLite

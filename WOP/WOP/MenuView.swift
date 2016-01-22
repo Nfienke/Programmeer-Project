@@ -22,10 +22,10 @@ class MenuView: UIViewController {
         
          DB.selectWO() //mag eruit
         
-        //http://stackoverflow.com/questions/25106784/how-to-set-a-background-image-to-a-uiview-in-swift
+        //Background: http://stackoverflow.com/questions/25106784/how-to-set-a-background-image-to-a-uiview-in-swift
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B9.png")!)
         
-        //NSUserdefaults lade
+        //NSUserdefaults laden
         if NSUserDefaults.standardUserDefaults().objectForKey("NameWO") != nil{
             DB.valueNameWO = NSUserDefaults.standardUserDefaults().objectForKey("NameWO") as! String
             

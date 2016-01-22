@@ -24,11 +24,11 @@ public class WorkOutPlay {
         print("dicthier", DB.WODict)
         timeTotal = 0
          
-        //NSUserDefaults.standardUserDefaults().setObject(DB.WODict, forKey: "key")
+        
         for (_,v) in DB.WODict {
             timeTotal += v 
             
-            //http://stackoverflow.com/questions/24640990/how-do-i-get-the-key-at-a-specific-index-from-a-dictionary-in-swift
+            //Dictionaries and indexes: http://stackoverflow.com/questions/24640990/how-do-i-get-the-key-at-a-specific-index-from-a-dictionary-in-swift
             let index = DB.WODict.startIndex.advancedBy(intIndex)
             print("index en verder")// if index is out of range
             timeWO = DB.WODict.values[index]

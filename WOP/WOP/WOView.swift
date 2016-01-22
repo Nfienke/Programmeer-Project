@@ -129,8 +129,8 @@ class WOView: UIViewController {
 //        }
     
     
-     return true
-    }
+ //    return true
+//    }
     
     func playSound()    {
         
@@ -153,7 +153,7 @@ class WOView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B4.png")!)
-        //NSUserdefaults lade
+        //NSUserdefaults laden
         if NSUserDefaults.standardUserDefaults().objectForKey("NameWO") != nil{
             DB.valueNameWO = NSUserDefaults.standardUserDefaults().objectForKey("NameWO") as! String
             

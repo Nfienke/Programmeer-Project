@@ -54,3 +54,11 @@ Mocht de applicatie te simpel blijken zijn er een aantal features die ik wil toe
 - Timer format: http://rshankar.com/simple-stopwatch-app-in-swift/
 - SQLite install manual: https://github.com/stephencelis/SQLite.swift/blob/master/Documentation/Index.md#cocoapods
 - Segue met voorwaarde: http://jamesleist.com/ios-swift-tutorial-stop-segue-show-alert-text-box-empty/
+- Dictionary en index: //http://stackoverflow.com/questions/24640990/how-do-i-get-the-key-at-a-specific-index-from-a-dictionary-in-swift
+- Afspelen geluid: http://stackoverflow.com/questions/24393495/playing-a-sound-with-avaudioplayer
+    https://www.hackingwithswift.com/example-code/media/how-to-play-sounds-using-avaudioplayer
+- Minutesbar: http://www.ioscreator.com/tutorials/segmented-control-tutorial-ios8-swift
+- Pickerview: http://www.ioscreator.com/tutorials/picker-view-tutorial-ios8-swift
+
+
+
