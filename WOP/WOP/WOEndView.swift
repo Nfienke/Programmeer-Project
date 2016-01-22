@@ -11,6 +11,10 @@ import UIKit
 
 class WOEndView: UIViewController {
     
+    @IBAction func ToMyWopButton(sender: UIButton) {
+        DB.WOOverview = []
+    }
+    
     @IBAction func EndButton(sender: UIButton) {
        exit(0)
     }

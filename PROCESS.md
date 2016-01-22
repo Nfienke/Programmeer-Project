@@ -45,6 +45,11 @@ daarvoor heb ik wel de inhoud van de database aangepast. Ook een aantal keer opn
 - De timer en geluid functies staan in de view class en niet in het model. Dit is gedaan omdat de de timer rechtstreeks een label waar de tijd op wordt afgebeeld aanpast. Anders zou je het met een onwijze omweg moeten doen. 
 - De insertion bij het aanmaken van een nieuwe work out, blijkt toch niet goed te werken, dus daar ga ik morgen mee aan de slag. 
 
+##Dag 13
+- Verder gewerkt aan de insertion en selection in de database model. 
+
+##Dag 14
+- De work out wordt nu afgespeeld zonder pauzes, maar in het echt dan ga je vaak niet meteen door. Daarom wordt de wordt de workout na een oefening gepauzeerd. Veel getest met de app om te kijken waar er nog dingen misten en wat nog fout ging. Zoals een dubbele selectie bij het work out overzicht. Dit weekend moet ik nog meer gaan testen met de app. 
 
 
 modelclasses voor martijn? todo

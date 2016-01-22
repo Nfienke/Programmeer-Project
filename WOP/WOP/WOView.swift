@@ -98,12 +98,38 @@ class WOView: UIViewController {
             
             //end of an exercise
             if min2 == WO.timeWO{
+                if timerTotal == true{
+                    timerTotal = false
+                    onOffTimer()
+                }
+                
                 playSound()
                 min2 = 0
                 WO.intIndex += 1
                 WO.playWO()
+                
             }
         return true
+    }
+    
+//    func restTimer()->Bool {//misschien
+//        print("hallo")
+//        sec2 += 1
+//        
+//        if sec2 == 15{
+//            if timerTotal == true{
+//                timerTotal = false
+//                onOffTimer()
+//            }
+//            sec2 = 0
+//            WO.intIndex += 1
+//            WO.playWO()
+//            WOtimer()
+//            return false
+//        }
+    
+    
+     return true
     }
     
     func playSound()    {

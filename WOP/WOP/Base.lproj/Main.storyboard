@@ -79,6 +79,9 @@
                             <constraint firstItem="7Aw-Pl-9R5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="mfi-5P-Wrz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playButtton" destination="uuh-6M-TAm" id="W5I-lc-skw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -502,6 +505,7 @@
                                             </attributedString>
                                         </state>
                                         <connections>
+                                            <action selector="ToMyWopButton:" destination="l5y-Yb-gL9" eventType="touchUpInside" id="X9x-Rd-VeE"/>
                                             <segue destination="hg5-uL-nPP" kind="show" id="uTK-T6-mnH"/>
                                         </connections>
                                     </button>
@@ -621,6 +625,7 @@
                                             </attributedString>
                                         </state>
                                         <connections>
+                                            <action selector="backToWOViewButton:" destination="eiJ-Ne-iDT" eventType="touchUpInside" id="aac-GZ-wh2"/>
                                             <segue destination="hg5-uL-nPP" kind="show" id="uAN-PW-vXQ"/>
                                         </connections>
                                     </button>

@@ -96,6 +96,7 @@ public class DBModel{
        
         do{
             try db.run(Table2WO.insert(idWO <- valueIdWO, WOType <- valueWOType, min <- valueMin))
+            print("\(valueIdWO),\(WOType), \(min)")
         }
             
         catch {
@@ -122,16 +123,20 @@ public class DBModel{
     func selectWOName() {
         
         //WOOverview = []
-        let WOselect = Table1.filter(nameWO.like(DB.valueNameWO))
-        let WOTypeSelect = Table2WO.filter(idWO == valueIdWO)
+        
+        print("name:", DB.valueNameWO)
+        
         
         do{
+            let WOselect = Table1.filter(nameWO.like(DB.valueNameWO))
             for row in try db.prepare(WOselect){
                 valueIdWO = row[idWO]
+                
+                let WOTypeSelect = Table2WO.filter(idWO == valueIdWO)
                 for row in try db.prepare(WOTypeSelect){
                     valueWOType = row[WOType]!
                     valueMin = row[min]
-                    WOOverview.append("WorkOut: \(valueWOType) Minutes: \(valueMin)")
+                    WOOverview.append("\(valueWOType) \(valueMin) min")
                     WODict[valueWOType] = Int(valueMin)
                 }
             }
@@ -175,21 +180,21 @@ public class DBModel{
     }
     
     // to see what is in the DB.-> in menu weghalen en outcommenten
-    //    func selectWO() {
-    //        do{
-    //            for row in try db.prepare(Table1){
-    //                print("idWO: \(row[idWO]), NameWO: \(row[nameWO])")
-    //                print("Selection completed")
-    //            }
-    //            for row in try db.prepare(Table2WO){
-    //                print("idWO: \(row[idWO]), WOType: \(row[WOType]), min: \(row[min])")
-    //                print("Selection 2 completed")
-    //            }
-    //        }
-    //
-    //        catch{
-    //            print("selection failed: \(error)")
-    //        }
-    //    }
+        func selectWO() {
+            do{
+                for row in try db.prepare(Table1){
+                    print("idWO: \(row[idWO]), NameWO: \(row[nameWO])")
+                    print("Selection completed")
+                }
+                for row in try db.prepare(Table2WO){
+                    print("idWO: \(row[idWO]), WOType: \(row[WOType]), min: \(row[min])")
+                    print("Selection 2 completed")
+                }
+            }
+    
+            catch{
+                print("selection failed: \(error)")
+            }
+        }
     
 }

@@ -13,7 +13,7 @@ import UIKit
 
 class NewWOPView: UIViewController {
     
-    var WOTypes = ["Cruch","Run","Jump","Push up"]
+    var WOTypes = ["Cruch","Run","Jump","Push up","Lift"]
     
     @IBOutlet weak var labelTotalTime: UILabel!
     var time = Int64()

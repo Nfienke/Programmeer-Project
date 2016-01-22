@@ -13,10 +13,14 @@ class MyWOPView: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     var WOoverview = [String]()
     
+    
     @IBAction func GoToWoView(sender: UIButton) {
+        
         if DB.WOOverview == [] {
-             DB.selectWOName()
+            DB.selectWOName()
+            DB.valueNameWO = ""
         }
+        
        
     }
     
@@ -25,8 +29,10 @@ class MyWOPView: UIViewController, UITableViewDelegate, UITableViewDataSource  {
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        DB.valueNameWO = ""
         DB.WOview = []
         DB.selectViewWO()
+        
         
         WOoverview = DB.WOview
         print (WOoverview)

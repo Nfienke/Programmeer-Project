@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class MyWOPOverviewView: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+    var wotypes = [String]()
     
     @IBOutlet weak var tableWoOverview: UITableView!
     
@@ -18,13 +19,18 @@ class MyWOPOverviewView: UIViewController, UITableViewDelegate, UITableViewDataS
         //print(DB.WODict)
     }
     
+    @IBAction func backToWOViewButton(sender: UIButton) {
+        DB.WOOverview = []
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        wotypes = []
         if DB.WOOverview == []{
             DB.selectWOName()
+            print("jajaja")
         }
-        
+        wotypes = DB.WOOverview
         print("workout", DB.WOOverview)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B6.png")!)
         self.tableWoOverview.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -36,17 +42,18 @@ class MyWOPOverviewView: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  DB.WOOverview.count
+        return  wotypes.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.tableWoOverview.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        cell.textLabel?.text = DB.WOOverview[indexPath.row]
+        cell.textLabel?.text = wotypes[indexPath.row]
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //print("You selected cell #\(indexPath.row)!")
+        
     }
     
 
