@@ -14,8 +14,10 @@ class MyWOPView: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     var WOoverview = [String]()
     
     @IBAction func GoToWoView(sender: UIButton) {
-        
-        DB.selectWOName()
+        if DB.WOOverview == [] {
+             DB.selectWOName()
+        }
+       
     }
     
     @IBOutlet weak var OverviewTable: UITableView!
@@ -28,6 +30,7 @@ class MyWOPView: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         
         WOoverview = DB.WOview
         print (WOoverview)
+        
         //DB.selectViewWO()
         self.OverviewTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B10.png")!)
@@ -54,7 +57,7 @@ class MyWOPView: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //print("You selected cell #(indexPath.row)!")
         DB.valueNameWO = WOoverview[indexPath.row]
-        print(DB.valueNameWO)
+        //print(DB.valueNameWO)
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {

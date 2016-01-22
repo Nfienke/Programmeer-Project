@@ -13,11 +13,18 @@ import UIKit
 
 class NewWOPView: UIViewController {
     
-    @IBOutlet weak var minutesBar: UISegmentedControl!
+    var WOTypes = ["Cruch","Run","Jump","Push up"]
+    
+    @IBOutlet weak var labelTotalTime: UILabel!
+    var time = Int64()
+    
+    @IBAction func GoToWOButton(sender: UIButton) {
+      DB.selectWOName()
+    }
     
     //http://www.ioscreator.com/tutorials/segmented-control-tutorial-ios8-swift
+    @IBOutlet weak var minutesBar: UISegmentedControl!
     @IBAction func minutesChanger(sender: UISegmentedControl) {
-        
         switch minutesBar.selectedSegmentIndex{
         case 0:
             DB.valueMin = 2;
@@ -32,13 +39,14 @@ class NewWOPView: UIViewController {
         case 5:
             DB.valueMin = 30;
         default:
-            break; 
+            break;
         }
     }
     
-    
     @IBAction func addButton(sender: UIButton) {
         DB.insertNewExercises()
+        time += DB.valueMin
+        labelTotalTime.text! = "Total Time:\(time):00 minutes"
         //print(DB.valueMin)
     }
   
@@ -47,21 +55,17 @@ class NewWOPView: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        //insertNewExercises()
-        print("2e scherm",DB.valueIdWO)
+        
+         DB.valueMin = 2
+         DB.valueWOType = "Crunch"
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B1.png")!)
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
     
-    // Pickerview
-    //http://www.ioscreator.com/tutorials/picker-view-tutorial-ios8-swift
-    var WOTypes = ["Cruch","Run","Jump","Push up"]
+    //Pickerview: http://www.ioscreator.com/tutorials/picker-view-tutorial-ios8-swift
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1

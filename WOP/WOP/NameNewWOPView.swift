@@ -18,29 +18,28 @@ class NameNewWOPView: UIViewController {
         
     }
     
-    // test if a name is entered
+    // test if a name is entered and if a name is unique
     //http://jamesleist.com/ios-swift-tutorial-stop-segue-show-alert-text-box-empty/
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if identifier == "nameToNewWO" {
-            
-                if nameNewField.text != "" {
-                    DB.valueNameWO = nameNewField.text!
-                    
-                    DB.insertNewWO()
-                    print(DB.valueIdWO)
+                
+            if nameNewField.text != "" {
+                DB.valueNameWO = nameNewField.text!
+                DB.insertNewWO()
+                
+                if DB.uniqueNameCheck == true{
                     return true
                 }
+                    
                 else{
                     nameNewField.backgroundColor = UIColor.redColor()
                     return false
                 }
+            }
         }
-       
-        return true
-  
+        return false
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B7.png")!)

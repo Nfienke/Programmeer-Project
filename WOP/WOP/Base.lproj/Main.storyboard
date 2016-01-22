@@ -284,6 +284,7 @@
                         <outlet property="labelRunTime" destination="EQ0-LJ-c5C" id="iBM-Tw-x9I"/>
                         <outlet property="labelTotalOverviewTime" destination="6fW-NG-nr3" id="JjF-9T-59Z"/>
                         <outlet property="labelTotalRunTime" destination="KgU-fm-jlj" id="rV2-Fu-k74"/>
+                        <segue destination="l5y-Yb-gL9" kind="show" identifier="End" id="vQs-Yc-ccJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ky1-7e-fWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -324,7 +325,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nzY-te-9XA">
-                                <rect key="frame" x="5" y="488" width="304" height="104"/>
+                                <rect key="frame" x="5" y="488" width="382" height="104"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Time: 00:00 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsH-lH-4MB">
                                         <rect key="frame" x="0.0" y="0.0" width="206" height="104"/>
@@ -333,19 +334,20 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="qws-dn-BYx">
-                                        <rect key="frame" x="206" y="0.0" width="98" height="104"/>
+                                        <rect key="frame" x="206" y="0.0" width="176" height="104"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcc-fo-BBy">
-                                                <rect key="frame" x="13" y="0.0" width="85" height="52"/>
+                                                <rect key="frame" x="91" y="0.0" width="85" height="52"/>
                                                 <state key="normal" title="Add" image="Plus Math"/>
                                                 <connections>
                                                     <action selector="addButton:" destination="9KH-1s-NY0" eventType="touchUpInside" id="KiW-XV-QJ0"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cy-Yc-cEK">
-                                                <rect key="frame" x="0.0" y="52" width="98" height="52"/>
-                                                <state key="normal" title="Finish" image="Right"/>
+                                                <rect key="frame" x="0.0" y="52" width="176" height="52"/>
+                                                <state key="normal" title="Go to Work Out" image="Right"/>
                                                 <connections>
+                                                    <action selector="GoToWOButton:" destination="9KH-1s-NY0" eventType="touchUpInside" id="fK3-eu-zSn"/>
                                                     <segue destination="eiJ-Ne-iDT" kind="show" id="TKe-A8-msp"/>
                                                 </connections>
                                             </button>
@@ -356,10 +358,10 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="h0J-lM-4md">
                                 <rect key="frame" x="5" y="132" width="590" height="316"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="center" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rIS-eU-fFn">
+                                    <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rIS-eU-fFn">
                                         <rect key="frame" x="0.0" y="0.0" width="590" height="251"/>
                                         <subviews>
-                                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mtg-iX-5Z7">
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mtg-iX-5Z7">
                                                 <rect key="frame" x="0.0" y="0.0" width="590" height="251"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="9KH-1s-NY0" id="EaN-FN-6TO"/>
@@ -436,6 +438,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="labelTotalTime" destination="MsH-lH-4MB" id="IJn-3i-4fR"/>
                         <outlet property="minutesBar" destination="EUn-6A-q56" id="4GV-1t-PFn"/>
                     </connections>
                 </viewController>
@@ -520,6 +523,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="EndButton:" destination="l5y-Yb-gL9" eventType="touchUpInside" id="HPO-PP-SLr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="equalSpacing"/>
@@ -718,9 +724,10 @@
         <image name="buttonnwop" width="490" height="156"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="X7Y-oo-D7e"/>
-        <segue reference="TKe-A8-msp"/>
-        <segue reference="uAN-PW-vXQ"/>
+        <segue reference="4vT-QV-yBY"/>
+        <segue reference="vQs-Yc-ccJ"/>
         <segue reference="UXE-V6-9P4"/>
+        <segue reference="TKe-A8-msp"/>
+        <segue reference="uTK-T6-mnH"/>
     </inferredMetricsTieBreakers>
 </document>

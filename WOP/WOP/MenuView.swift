@@ -14,17 +14,23 @@ import Foundation
 
 class MenuView: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DB.selectWO()
+        //DB.selectWO() //mag eruit
         
         //http://stackoverflow.com/questions/25106784/how-to-set-a-background-image-to-a-uiview-in-swift
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B9.png")!)
         
-
-        
+        //NSUserdefaults lade
+        if NSUserDefaults.standardUserDefaults().objectForKey("NameWO") != nil{
+            DB.valueNameWO = NSUserDefaults.standardUserDefaults().objectForKey("NameWO") as! String
+            
+        }
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

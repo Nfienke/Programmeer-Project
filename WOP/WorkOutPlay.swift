@@ -18,6 +18,10 @@ public class WorkOutPlay {
     var intIndex = 0
     
     func playWO() {
+        NSUserDefaults.standardUserDefaults().setObject(DB.valueNameWO, forKey: "NameWO")
+        print("namehier", DB.valueNameWO)
+        DB.selectWOName()
+        print("dicthier", DB.WODict)
         timeTotal = 0
          
         //NSUserDefaults.standardUserDefaults().setObject(DB.WODict, forKey: "key")

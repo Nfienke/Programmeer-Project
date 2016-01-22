@@ -14,13 +14,18 @@ class MyWOPOverviewView: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var tableWoOverview: UITableView!
     
     @IBAction func startWOButton(sender: UIButton) {
-        NSUserDefaults.standardUserDefaults().setObject(DB.WODict, forKey: "WODict")
+//        NSUserDefaults.standardUserDefaults().setObject(DB.WODict, forKey: "WODict")
+        //print(DB.WODict)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("workout", DB.valueIdWO, DB.valueNameWO, DB.valueWOType, DB.valueMin)
+        if DB.WOOverview == []{
+            DB.selectWOName()
+        }
+        
+        print("workout", DB.WOOverview)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B6.png")!)
         self.tableWoOverview.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }

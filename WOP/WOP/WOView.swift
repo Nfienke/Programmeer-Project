@@ -11,7 +11,7 @@ import UIKit
 import AVFoundation
 
 class WOView: UIViewController {
-    
+    var identifier = String()
     //http://stackoverflow.com/questions/24393495/playing-a-sound-with-avaudioplayer
     //https://www.hackingwithswift.com/example-code/media/how-to-play-sounds-using-avaudioplayer
     var audio: AVAudioPlayer!
@@ -51,10 +51,8 @@ class WOView: UIViewController {
         if timerTotal == false{
             timerTotal = true
             onOffTimer()
-            
-            //
+
         }
-    
     }
     
     
@@ -65,43 +63,47 @@ class WOView: UIViewController {
         }
         
         if timerTotal == false {
-            
             timerTotalWO.invalidate()
         }
     }
     
-    func WOtimer() {
+    //
+    func WOtimer()->Bool{
+
         labelExercise.text! = WO.WOtype
         labelOverviewTime.text! = "\(String(format:"%02d", WO.timeWO)):00"
-        sec += 1
-        sec2 += 1
+        
         labelTotalRunTime.text! = "\(String(format:"%02d", min)):\(String(format:"%02d", sec))"
         labelRunTime.text! = "\(String(format:"%02d", min2)):\(String(format:"%02d", sec2))"//
+        sec += 1
+        sec2 += 1
         
-        
-        if sec == 60{
-            print(WO.timeTotal)
-            sec = 0
-            sec2 = 0
-            min += 1
-            min2 += 1
+            if sec == 60{
+                sec = 0
+                sec2 = 0
+                min += 1
+                min2 += 1
+            }
             // Time of total work out has ended.
             if min == WO.timeTotal{
-                //timerTotalWO.invalidate()
-                timerTotal = false
-                print("einde")
-                //segue to WOEndView
+                if timerTotal == true{
+                    timerTotal = false
+                    onOffTimer()
+                }
+                playSound()
+                performSegueWithIdentifier("End", sender: self)
+               return false
+                
             }
-        }
-        //end of an exercise
-        if min2 == WO.timeWO{
-            playSound()
-            min2 = 0
-            WO.intIndex += 1
-            WO.playWO()
-        }
-
-       
+            
+            //end of an exercise
+            if min2 == WO.timeWO{
+                playSound()
+                min2 = 0
+                WO.intIndex += 1
+                WO.playWO()
+            }
+        return true
     }
     
     func playSound()    {
@@ -110,27 +112,29 @@ class WOView: UIViewController {
         let url = NSURL(fileURLWithPath: path!)// is dit nodig? de path
         
         do {
-        let sound = try AVAudioPlayer(contentsOfURL: url)
-        audio = sound
-        sound.play()
-        } catch {
+            let sound = try AVAudioPlayer(contentsOfURL: url)
+            audio = sound
+            sound.play()
+        }
+        
+        catch {
         // couldn't load file :(
         }
     }
- 
- 
+    
+   
   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B4.png")!)
-        //NSUserdefaults laden
-        if NSUserDefaults.standardUserDefaults().objectForKey("WODict") != nil{
-            DB.WODict = NSUserDefaults.standardUserDefaults().objectForKey("WODict") as! Dictionary//laden
+        //NSUserdefaults lade
+        if NSUserDefaults.standardUserDefaults().objectForKey("NameWO") != nil{
+            DB.valueNameWO = NSUserDefaults.standardUserDefaults().objectForKey("NameWO") as! String
+            
         }
+        DB.selectWOName()
         WO.playWO()
-        //
-       //opslaan
-        
+       
         labelExercise.text! = WO.WOtype
         
         // format: http://rshankar.com/simple-stopwatch-app-in-swift/
@@ -138,12 +142,11 @@ class WOView: UIViewController {
         labelOverviewTime.text! = "\(String(format:"%02d", WO.timeWO)):00" //?
         labelTotalRunTime.text! = "\(String(format:"%02d", min)):\(String(format:"%02d", sec))"
         labelRunTime.text! = "\(String(format:"%02d", min)):\(String(format:"%02d", sec))"
-        
-      
 
-
-  
     }
+    
+    
+        
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

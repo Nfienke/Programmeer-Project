@@ -11,6 +11,9 @@ import UIKit
 
 class WOEndView: UIViewController {
     
+    @IBAction func EndButton(sender: UIButton) {
+       exit(0)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
