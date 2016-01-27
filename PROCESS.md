@@ -56,11 +56,22 @@ daarvoor heb ik wel de inhoud van de database aangepast. Ook een aantal keer opn
 
 ##Dag 16
 - Code netter gemaakt. 
-- 
+- Lay-out nog netter gemaakt. 
+- Gekozen om een work out niet meer achter te kunnen aanpassen. Eerst dacht ik dat het niet veel meer werk zou zijn, maar moet de hele structuur aanpassen omdat ik iets in een list stop en niet in een array of dict. 
 
 ##Dag 17
 - Applicatie gecheckt of het werkt vanaf github nieuwe download.
+- Applicatie getest op bugs. 
 
+##Dag 18
+- Code review van Julian. Van daaruit nog wat dingen aangepast. Waaronder het aanroepen van de model classes. 
+
+##Dag 19
+- Report afmaken.
+- Checken van de code en op mobiel runnen.
+
+##Dag 20
+- Final presentation.
 
 modelclasses voor martijn? todo
 - 
