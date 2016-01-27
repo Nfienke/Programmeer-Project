@@ -10,35 +10,37 @@ import Foundation
 import UIKit
 
 class NewWOPView: UIViewController {
-    
+  
     // Exercises
     var WOTypes = ["Cruch","Run","Jump","Push up","Lift"]
+    
     //Total time of the new exercise.
     @IBOutlet weak var labelTotalTime: UILabel!
     var time = Int64()
     
     //Shows the new work out in MYWOPOVerviewView.
     @IBAction func GoToWOButton(sender: UIButton) {
-      DB.selectWOName()
+      DBModel.sharedInstance.selectWOName()
     }
     
     //To chose the length of an exercise.
     //http://www.ioscreator.com/tutorials/segmented-control-tutorial-ios8-swift
     @IBOutlet weak var minutesBar: UISegmentedControl!
+    
     @IBAction func minutesChanger(sender: UISegmentedControl) {
         switch minutesBar.selectedSegmentIndex{
         case 0:
-            DB.valueMin = 2;
+            DBModel.sharedInstance.valueMin = 2;
         case 1:
-            DB.valueMin = 5;
+            DBModel.sharedInstance.valueMin = 5;
         case 2:
-            DB.valueMin = 10;
+            DBModel.sharedInstance.valueMin = 10;
         case 3:
-            DB.valueMin = 15;
+            DBModel.sharedInstance.valueMin = 15;
         case 4:
-            DB.valueMin = 20;
+            DBModel.sharedInstance.valueMin = 20;
         case 5:
-            DB.valueMin = 30;
+            DBModel.sharedInstance.valueMin = 30;
         default:
             break;
         }
@@ -46,8 +48,8 @@ class NewWOPView: UIViewController {
     
     //Adds an exercise to the work out.
     @IBAction func addButton(sender: UIButton) {
-        DB.insertNewExercises()
-        time += DB.valueMin
+        DBModel.sharedInstance.insertNewExercises()
+        time += DBModel.sharedInstance.valueMin
         labelTotalTime.text! = "Total Time:\(time):00 minutes"
     }
   
@@ -55,8 +57,8 @@ class NewWOPView: UIViewController {
         super.viewDidLoad()
         
          //Start values of the minutesbar and pickerview.
-         DB.valueMin = 2
-         DB.valueWOType = "Crunch"
+         DBModel.sharedInstance.valueMin = 2
+         DBModel.sharedInstance.valueWOType = "Crunch"
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B1.png")!)
     }
@@ -78,8 +80,8 @@ class NewWOPView: UIViewController {
         return WOTypes[row]
     }
     
-    func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int){
-        DB.valueWOType = WOTypes[row]
+    func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int) {
+        DBModel.sharedInstance.valueWOType = WOTypes[row]
         self.view.endEditing(true)
     }
 }

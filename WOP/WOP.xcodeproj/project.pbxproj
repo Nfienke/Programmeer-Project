@@ -17,7 +17,7 @@
 		3266EB6F1C4FCBA30065F313 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 329EEB041C45444E00A925B1 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		329EEB0B1C45446C00A925B1 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329EEB041C45444E00A925B1 /* SQLite.framework */; };
 		32DBEFFA1C45352C003571F8 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DBEFF91C45352C003571F8 /* DBModel.swift */; };
-		32E7BCF41C43B4E3003AC818 /* WorkOutPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7BCF31C43B4E3003AC818 /* WorkOutPlay.swift */; };
+		32E7BCF41C43B4E3003AC818 /* WOPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7BCF31C43B4E3003AC818 /* WOPlay.swift */; };
 		32F043861C3BBF4100A8F69A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F043851C3BBF4100A8F69A /* AppDelegate.swift */; };
 		32F043881C3BBF4100A8F69A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F043871C3BBF4100A8F69A /* MenuView.swift */; };
 		32F0438B1C3BBF4100A8F69A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F043891C3BBF4100A8F69A /* Main.storyboard */; };
@@ -103,7 +103,7 @@
 		3214F8881C3D45BB00D75A5F /* WOEndView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WOEndView.swift; sourceTree = "<group>"; };
 		329EEAFC1C45444E00A925B1 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = SQLite/SQLite.xcodeproj; sourceTree = "<group>"; };
 		32DBEFF91C45352C003571F8 /* DBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
-		32E7BCF31C43B4E3003AC818 /* WorkOutPlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkOutPlay.swift; sourceTree = "<group>"; };
+		32E7BCF31C43B4E3003AC818 /* WOPlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WOPlay.swift; sourceTree = "<group>"; };
 		32F043821C3BBF4100A8F69A /* WOP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WOP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F043851C3BBF4100A8F69A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32F043871C3BBF4100A8F69A /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 		3214F87D1C3D43A700D75A5F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				32E7BCF31C43B4E3003AC818 /* WorkOutPlay.swift */,
+				32E7BCF31C43B4E3003AC818 /* WOPlay.swift */,
 				32DBEFF91C45352C003571F8 /* DBModel.swift */,
 			);
 			name = Models;
@@ -409,7 +409,7 @@
 				3214F87F1C3D442300D75A5F /* NameNewWOPView.swift in Sources */,
 				32F043881C3BBF4100A8F69A /* MenuView.swift in Sources */,
 				3214F8891C3D45BB00D75A5F /* WOEndView.swift in Sources */,
-				32E7BCF41C43B4E3003AC818 /* WorkOutPlay.swift in Sources */,
+				32E7BCF41C43B4E3003AC818 /* WOPlay.swift in Sources */,
 				3214F8851C3D457E00D75A5F /* MyWOPOverviewView.swift in Sources */,
 				32DBEFFA1C45352C003571F8 /* DBModel.swift in Sources */,
 				3214F8811C3D444000D75A5F /* NewWOPView.swift in Sources */,

@@ -8,9 +8,8 @@
 
 import Foundation
 import UIKit
-var WO = WorkOutPlay()
 
-public class WorkOutPlay {
+public class WOPlay {
     
     var timeTotal = Int64()
     var timeWO = Int()
@@ -20,19 +19,19 @@ public class WorkOutPlay {
     // Shows information about the chosen work out, so it can be palyed: time and exercises.
     func playWO() {
         
-        NSUserDefaults.standardUserDefaults().setObject(DB.valueNameWO, forKey: "NameWO")
-        DB.selectWOName()
+        NSUserDefaults.standardUserDefaults().setObject(DBModel.sharedInstance.valueNameWO, forKey: "NameWO")
+        DBModel.sharedInstance.selectWOName()
         timeTotal = 0
         
-        for (_,v) in DB.WODict {
+        for (_,v) in DBModel.sharedInstance.ExerciseDict {
             //calculates the total time of the work out.
             timeTotal += v
             
             //Dictionaries and indexes: 
             //http://stackoverflow.com/questions/24640990/how-do-i-get-the-key-at-a-specific-index-from-a-dictionary-in-swift
-            let index = DB.WODict.startIndex.advancedBy(intIndex)
-            timeWO = DB.WODict.values[index]
-            WOtype = DB.WODict.keys[index]
+            let index = DBModel.sharedInstance.ExerciseDict.startIndex.advancedBy(intIndex)
+            timeWO = DBModel.sharedInstance.ExerciseDict.values[index]
+            WOtype = DBModel.sharedInstance.ExerciseDict.keys[index]
         }
     }
 }

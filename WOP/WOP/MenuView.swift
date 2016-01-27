@@ -10,10 +10,9 @@ import UIKit
 import Foundation
 
 class MenuView: UIViewController {
-
+    
     @IBOutlet weak var playButtton: UIButton!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,12 +20,13 @@ class MenuView: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B9.png")!)
         
         //NSUserdefaults loading: checking if there was a previous work out.
-        if NSUserDefaults.standardUserDefaults().objectForKey("NameWO") != nil{
-            DB.valueNameWO = NSUserDefaults.standardUserDefaults().objectForKey("NameWO") as! String
+        if NSUserDefaults.standardUserDefaults().objectForKey("NameWO") != nil {
+            DBModel.sharedInstance.valueNameWO = NSUserDefaults.standardUserDefaults().objectForKey("NameWO") as! String
             
             playButtton.hidden = false
         }
-        else{
+            
+        else {
         
             playButtton.hidden = true
         }

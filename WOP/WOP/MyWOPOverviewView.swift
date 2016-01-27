@@ -10,23 +10,23 @@ import Foundation
 import UIKit
 
 class MyWOPOverviewView: UIViewController, UITableViewDelegate, UITableViewDataSource  {
-    
-    var wotypes = [String]()
+ 
+    var woTypes = [String]()
     @IBOutlet weak var tableWoOverview: UITableView!
         
     @IBAction func backToWOViewButton(sender: UIButton) {
-        DB.WOOverview = []
+        DBModel.sharedInstance.ExerciseOverview = []
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        wotypes = []
+        woTypes = []
         
-        if DB.WOOverview == []{
-            DB.selectWOName()
+        if DBModel.sharedInstance.ExerciseOverview == [] {
+            DBModel.sharedInstance.selectWOName()
         }
         
-        wotypes = DB.WOOverview
+        woTypes = DBModel.sharedInstance.ExerciseOverview
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B6.png")!)
         self.tableWoOverview.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -39,18 +39,18 @@ class MyWOPOverviewView: UIViewController, UITableViewDelegate, UITableViewDataS
     
     //Table an overview of the exercises and time from the chosen work out.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  wotypes.count
+        return  woTypes.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.tableWoOverview.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        cell.textLabel?.text = wotypes[indexPath.row]
+        cell.textLabel?.text = woTypes[indexPath.row]
         cell.textLabel?.textColor = UIColor.whiteColor()
         cell.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.5)
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //nog iets erin zetten? en een remove?
+        
     }
 }

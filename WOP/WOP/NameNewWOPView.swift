@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class NameNewWOPView: UIViewController {
-    
+
     @IBOutlet weak var nameNewField: UITextField!
  
     //Test if a name is entered and is unique.
@@ -19,10 +19,10 @@ class NameNewWOPView: UIViewController {
         if identifier == "nameToNewWO" {
                 
             if nameNewField.text != "" {
-                DB.valueNameWO = nameNewField.text!
-                DB.insertNewWO()
+                DBModel.sharedInstance.valueNameWO = nameNewField.text!
+                DBModel.sharedInstance.insertNewWO()
                 
-                if DB.uniqueNameCheck == true{
+                if DBModel.sharedInstance.uniqueNameCheck == true{
                     return true
                 }
                     
@@ -32,7 +32,6 @@ class NameNewWOPView: UIViewController {
                 }
             }
         }
-        
         return false
     }
 

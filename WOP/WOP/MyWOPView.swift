@@ -11,14 +11,15 @@ import UIKit
 
 class MyWOPView: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
+    @IBOutlet weak var GoToWoButton: UIButton!
     var WOoverview = [String]()
     @IBOutlet weak var OverviewTable: UITableView!
     
     @IBAction func GoToWoView(sender: UIButton) {
         
-        if DB.WOOverview == [] {
-            DB.selectWOName()
-            DB.valueNameWO = ""
+        if DBModel.sharedInstance.ExerciseOverview == [] {
+            DBModel.sharedInstance.selectWOName()
+            DBModel.sharedInstance.valueNameWO = ""
         }
     }
     
@@ -26,18 +27,20 @@ class MyWOPView: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         super.viewDidLoad()
         
         //Clears some values.
-        DB.valueNameWO = ""
-        DB.WOview = []
+        DBModel.sharedInstance.valueNameWO = ""
+        DBModel.sharedInstance.WOview = []
         
         //Selects in DBModel all the work out possibilities.
-        DB.selectViewWO()
-        WOoverview = DB.WOview
-    
+        DBModel.sharedInstance.selectViewWO()
+        WOoverview = DBModel.sharedInstance.WOview
+        
+        //Only shows button when an work out is selected.
+        GoToWoButton.hidden = true
+        
+        //Lay-out.
         self.OverviewTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B10.png")!)
         OverviewTable.backgroundColor = UIColor.clearColor()
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,17 +60,17 @@ class MyWOPView: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         return cell
     }
     
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        DB.valueNameWO = WOoverview[indexPath.row]
+        DBModel.sharedInstance.valueNameWO = WOoverview[indexPath.row]
+        GoToWoButton.hidden = false
     }
     
-    // Removes an work out from the table and in DBModel from the Database.
+    // Removes a work out from the table and in DBModel from the Database.
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            DB.valueNameWO = WOoverview[indexPath.row]
+            DBModel.sharedInstance.valueNameWO = WOoverview[indexPath.row]
             WOoverview.removeAtIndex(indexPath.row)
-            DB.removeWO()
+            DBModel.sharedInstance.removeWO()
             OverviewTable.reloadData()
         }
     }

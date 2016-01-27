@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class WOEndView: UIViewController {
-    
+   
     @IBAction func ToMyWopButton(sender: UIButton) {
-        DB.WOOverview = []
+        DBModel.sharedInstance.ExerciseOverview = []
     }
     
     //Shuts down the application.

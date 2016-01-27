@@ -11,32 +11,34 @@
 
 import Foundation
 import SQLite
-var DB = DBModel()
-var db = DB.Database()
 
-public class DBModel{
+public class DBModel {
     
     public static let sharedInstance = DBModel()
+    
     private init() {}
     
-    //Table 1.
-    let Table1 = Table("Table1")
+    //Table Work Out.
+    let TableWO = Table("TableWO")
     let idWO = Expression<Int64>("idWO")
     let nameWO = Expression<String?>("nameWO")
-    //Table 2.
-    let Table2WO = Table("Table2WO")
+    
+    //Table Exercises.
+    let TableExercises = Table("TableExercises")
     let WOType = Expression<String?>("WOType")
     let min = Expression<Int64>("min")
+    
     //Insert en delete functies.
     var valueNameWO = String()
     var valueIdWO = Int64()
     var valueWOType = String()
     var valueMin = Int64()
     var uniqueNameCheck = Bool()
+    
     //Select functies.
     var WOview = [String]()
-    var WOOverview = [String]()
-    var WODict = Dictionary <String, Int>()
+    var ExerciseOverview = [String]()
+    var ExerciseDict = Dictionary <String, Int>()
     
     //Makes a connection to the database.
     public func Database() -> Connection {
@@ -45,37 +47,37 @@ public class DBModel{
             .DocumentDirectory, .UserDomainMask, true
             ).first!
         
-        return try! Connection("\(path)/db.sqlite3")//path?
+        return try! Connection("\(path)/db.sqlite3")
     }
     
     //Creates the first table: the id of the work out and the name of the work out.
     func createTable() {
         
-        do{
-            try db.run(Table1.create(ifNotExists: true){ t in
+        do {
+            try self.Database().run(TableWO.create(ifNotExists: true) { t in
                 t.column(idWO, primaryKey: true)
                 t.column(nameWO, unique: true)
                 })
         }
         
-        catch{
-            print("Could not create table1: \(error)")
+        catch {
+            print("Could not create TableWO: \(error)")
         }
     }
     
     //Creates the second table: the id of the work out, the exercises and their time.
     func createTable2() {
         
-        do{
-            try db.run(Table2WO.create(ifNotExists: true){ t in
+        do {
+            try self.Database().run(TableExercises.create(ifNotExists: true) { t in
                 t.column(idWO)
                 t.column(WOType)
                 t.column(min)
                 })
         }
             
-        catch{
-            print("Could not create table2: \(error)")
+        catch {
+            print("Could not create TableExercises: \(error)")
         }
     }
     
@@ -83,7 +85,7 @@ public class DBModel{
     func insertNewWO() {
        
         do {
-            let idWO = try db.run(Table1.insert(nameWO <- valueNameWO))
+            let idWO = try self.Database().run(TableWO.insert(nameWO <- valueNameWO))
             valueIdWO = idWO
             uniqueNameCheck = true
         }
@@ -97,9 +99,8 @@ public class DBModel{
     // Inserts excercises for the new Work Out (NewWOPView).
     func insertNewExercises() {
        
-        do{
-            try db.run(Table2WO.insert(idWO <- valueIdWO, WOType <- valueWOType, min <- valueMin))
-            print("\(valueIdWO),\(WOType), \(min)")
+        do {
+            try self.Database().run(TableExercises.insert(idWO <- valueIdWO, WOType <- valueWOType, min <- valueMin))
         }
             
         catch {
@@ -111,13 +112,13 @@ public class DBModel{
     // Selects an overview of al the Work Outs (MyWOPView).
     func selectViewWO() {
         
-        do{
-            for row in try db.prepare(Table1){
+        do {
+            for row in try self.Database().prepare(TableWO) {
                 WOview.append("\(row[nameWO]!)")
             }
         }
             
-        catch{
+        catch {
             print("selection failed: \(error)")
         }
     }
@@ -125,22 +126,22 @@ public class DBModel{
     // Selects the exercises of the selected Work Out (MyWOPOVerviewView and WOView).
     func selectWOName() {
      
-        do{
-            let WOselect = Table1.filter(nameWO.like(DB.valueNameWO))
-            for row in try db.prepare(WOselect){
+        do {
+            let WOselect = TableWO.filter(nameWO.like(valueNameWO))
+            for row in try self.Database().prepare(WOselect) {
                 valueIdWO = row[idWO]
                 
-                let WOTypeSelect = Table2WO.filter(idWO == valueIdWO)
-                for row in try db.prepare(WOTypeSelect){
+                let WOTypeSelect = TableExercises.filter(idWO == valueIdWO)
+                for row in try self.Database().prepare(WOTypeSelect) {
                     valueWOType = row[WOType]!
                     valueMin = row[min]
-                    WOOverview.append("\(valueWOType) \(valueMin) min")
-                    WODict[valueWOType] = Int(valueMin)
+                    ExerciseOverview.append("\(valueWOType) \(valueMin) min")
+                    ExerciseDict[valueWOType] = Int(valueMin)
                 }
             }
         }
             
-        catch{
+        catch {
             print("selection failed: \(error)")
         }
     }
@@ -148,33 +149,26 @@ public class DBModel{
     //Removes a Work Out (MyWOPView).
     func removeWO() {
         
-        let WOselect = Table1.filter(nameWO.like(DB.valueNameWO))
-        let WOremove = Table1.filter(nameWO.like(DB.valueNameWO))
+        let WOselect = TableWO.filter(nameWO.like(valueNameWO))
+        let WOremove = TableWO.filter(nameWO.like(valueNameWO))
         var id = Int64()
-        let WO2remove = Table2WO.filter(idWO == id)
+        let WO2remove = TableExercises.filter(idWO == id)
         
         do {
             
-            for row in try db.prepare(WOselect){
+            for row in try self.Database().prepare(WOselect) {
                 id = row[idWO]
-                
             }
             
-            if try db.run(WOremove.delete()) > 0 {
-                print("deleted WO")//
+            if try self.Database().run(WOremove.delete()) > 0 {
             }
             
-            if try db.run(WO2remove.delete()) > 0 {
-                 print("deleted WO2")////
-            }
-               
-            else {
-                print("Work out not found")
+            if try self.Database().run(WO2remove.delete()) > 0 {
             }
         }
             
         catch {
             print("delete failed: \(error)")
         }
-    }
+    }    
 }
