@@ -6,25 +6,25 @@
 //  Copyright © 2016 Nienke Pot. All rights reserved.
 //
 
-
 import UIKit
 import AVFoundation
 
 class WOView: UIViewController {
-    var identifier = String()
-    //http://stackoverflow.com/questions/24393495/playing-a-sound-with-avaudioplayer
-    //https://www.hackingwithswift.com/example-code/media/how-to-play-sounds-using-avaudioplayer
+    
+    //Audio.
     var audio: AVAudioPlayer!
-    @IBOutlet weak var labelExercise: UILabel!
-    //totalWO
+    // Buttons.
+    @IBOutlet weak var stop: UIButton!
+    @IBOutlet weak var breaking: UIButton!
+    @IBOutlet weak var play: UIButton!
+    //Labels of the work out info.
     @IBOutlet weak var labelTotalRunTime: UILabel!
     @IBOutlet weak var labelTotalOverviewTime: UILabel!
-    //wo
+    //Labels of the exercise info.
+    @IBOutlet weak var labelExercise: UILabel!
     @IBOutlet weak var labelRunTime: UILabel!
     @IBOutlet weak var labelOverviewTime: UILabel!
-    
-    //Timer
-    // timer basics: https://www.youtube.com/watch?v=g_bc4nSGuI4
+    //Timer: https://www.youtube.com/watch?v=g_bc4nSGuI4
     var timerTotal = false
     var timerTotalWO = NSTimer()
     var min = Int64()
@@ -32,33 +32,49 @@ class WOView: UIViewController {
     var min2 = Int()
     var sec2 = 0
     
+    //Shows the play and stop button when work out is stopped.
+       func breakModeButtons()   {
+        play.hidden = false
+        stop.hidden = false
+        breaking.hidden = true
+    }
+    
+    // Shows the break button when work out is played.
+    func playModeButtons()  {
+        play.hidden = true
+        stop.hidden = true
+        breaking.hidden = false
+    }
+    
     @IBAction func breakButton(sender: UIButton) {
+        
         if timerTotal == true{
             timerTotal = false
             onOffTimer()
+            breakModeButtons()
         }
     }
     
     @IBAction func stopButton(sender: UIButton) {
+       
         if timerTotal == true{
             timerTotal = false
         }
     }
     
-    
     @IBAction func playButton(sender: UIButton) {
-     
+        
         if timerTotal == false{
             timerTotal = true
             onOffTimer()
-
+            playModeButtons()
         }
     }
     
-    
+    // Checks whether the timer is running or not.
     func onOffTimer() {
+        
         if timerTotal == true{
-            
             timerTotalWO = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "WOtimer", userInfo: nil, repeats: true)
         }
         
@@ -67,39 +83,40 @@ class WOView: UIViewController {
         }
     }
     
-    //
-    func WOtimer()->Bool{
+    //Plays and displays the work out.
+    func WOtimer() ->Bool {
 
         labelExercise.text! = WO.WOtype
         labelOverviewTime.text! = "\(String(format:"%02d", WO.timeWO)):00"
-        
         labelTotalRunTime.text! = "\(String(format:"%02d", min)):\(String(format:"%02d", sec))"
-        labelRunTime.text! = "\(String(format:"%02d", min2)):\(String(format:"%02d", sec2))"//
+        labelRunTime.text! = "\(String(format:"%02d", min2)):\(String(format:"%02d", sec2))"
+        
         sec += 1
         sec2 += 1
-        
+            //Calculates secondes to minutes.
             if sec == 60{
                 sec = 0
                 sec2 = 0
                 min += 1
                 min2 += 1
             }
-            // Time of total work out has ended.
+            //End of the complete work out -> segue to end WOEndView.
             if min == WO.timeTotal{
+                
                 if timerTotal == true{
                     timerTotal = false
                     onOffTimer()
                 }
                 playSound()
                 performSegueWithIdentifier("End", sender: self)
-               return false
-                
+                return false
             }
-            
-            //end of an exercise
+            //The end of an exercise -> break.
             if min2 == WO.timeWO{
+                
                 if timerTotal == true{
                     timerTotal = false
+                    breakModeButtons()
                     onOffTimer()
                 }
                 
@@ -107,75 +124,55 @@ class WOView: UIViewController {
                 min2 = 0
                 WO.intIndex += 1
                 WO.playWO()
-                
             }
+        
         return true
     }
     
-//    func restTimer()->Bool {//misschien
-//        print("hallo")
-//        sec2 += 1
-//        
-//        if sec2 == 15{
-//            if timerTotal == true{
-//                timerTotal = false
-//                onOffTimer()
-//            }
-//            sec2 = 0
-//            WO.intIndex += 1
-//            WO.playWO()
-//            WOtimer()
-//            return false
-//        }
-    
-    
- //    return true
-//    }
-    
-    func playSound()    {
+    //http://stackoverflow.com/questions/24393495/playing-a-sound-with-avaudioplayer
+    //https://www.hackingwithswift.com/example-code/media/how-to-play-sounds-using-avaudioplayer
+    // Plays an sound when an exercise is completed.
+    func playSound() {
         
         let path = NSBundle.mainBundle().pathForResource("wosound", ofType: "mp3")
-        let url = NSURL(fileURLWithPath: path!)// is dit nodig? de path
+        let url = NSURL(fileURLWithPath: path!)
         
         do {
             let sound = try AVAudioPlayer(contentsOfURL: url)
             audio = sound
             sound.play()
         }
-        
         catch {
-        // couldn't load file :(
+            print("Could not play: \(error)")
         }
     }
     
-   
-  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B4.png")!)
-        //NSUserdefaults laden
+        
+        //NSUserdefaults loading: previous chosen work out.
         if NSUserDefaults.standardUserDefaults().objectForKey("NameWO") != nil{
             DB.valueNameWO = NSUserDefaults.standardUserDefaults().objectForKey("NameWO") as! String
-            
         }
+        
         DB.selectWOName()
         WO.playWO()
        
         labelExercise.text! = WO.WOtype
-        
-        // format: http://rshankar.com/simple-stopwatch-app-in-swift/
+        //Format: http://rshankar.com/simple-stopwatch-app-in-swift/
         labelTotalOverviewTime.text! = "\(String(format:"%02d", WO.timeTotal)):00"
         labelOverviewTime.text! = "\(String(format:"%02d", WO.timeWO)):00" //?
         labelTotalRunTime.text! = "\(String(format:"%02d", min)):\(String(format:"%02d", sec))"
         labelRunTime.text! = "\(String(format:"%02d", min)):\(String(format:"%02d", sec))"
-
-    }
-    
-    
         
-    
+        play.hidden = false
+        stop.hidden = false
+        breaking.hidden = true
+    }
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
 }

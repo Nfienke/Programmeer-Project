@@ -11,14 +11,9 @@ import UIKit
 
 class NameNewWOPView: UIViewController {
     
-    
     @IBOutlet weak var nameNewField: UITextField!
-    
-    @IBAction func NextNewWoButton(sender: AnyObject) {
-        
-    }
-    
-    // test if a name is entered and if a name is unique
+ 
+    //Test if a name is entered and is unique.
     //http://jamesleist.com/ios-swift-tutorial-stop-segue-show-alert-text-box-empty/
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if identifier == "nameToNewWO" {
@@ -37,25 +32,18 @@ class NameNewWOPView: UIViewController {
                 }
             }
         }
+        
         return false
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B7.png")!)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
-}
+    }
 }
 
-//
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if let destinationVC = segue.destinationViewController as? NewWOPView{
-//
-//            destinationVC.NameWO = nameNewField.text!
-//
-//        }
-//    }

@@ -9,9 +9,6 @@
 import UIKit
 import Foundation
 
-
-
-
 class MenuView: UIViewController {
 
     @IBOutlet weak var playButtton: UIButton!
@@ -20,12 +17,10 @@ class MenuView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         DB.selectWO() //mag eruit
-        
         //Background: http://stackoverflow.com/questions/25106784/how-to-set-a-background-image-to-a-uiview-in-swift
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B9.png")!)
         
-        //NSUserdefaults laden
+        //NSUserdefaults loading: checking if there was a previous work out.
         if NSUserDefaults.standardUserDefaults().objectForKey("NameWO") != nil{
             DB.valueNameWO = NSUserDefaults.standardUserDefaults().objectForKey("NameWO") as! String
             
@@ -35,15 +30,11 @@ class MenuView: UIViewController {
         
             playButtton.hidden = true
         }
-
    }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
-
-
 }
 

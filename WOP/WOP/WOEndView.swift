@@ -15,18 +15,18 @@ class WOEndView: UIViewController {
         DB.WOOverview = []
     }
     
+    //Shuts down the application.
     @IBAction func EndButton(sender: UIButton) {
        exit(0)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B5.png")!)
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
 }

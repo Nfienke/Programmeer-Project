@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        // Makes a connection with the database and creates 2 tables.
         DBModel.sharedInstance.Database()
         DBModel.sharedInstance.createTable()
         DBModel.sharedInstance.createTable2()

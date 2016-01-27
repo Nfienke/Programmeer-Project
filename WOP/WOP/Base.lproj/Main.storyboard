@@ -133,9 +133,20 @@
                                     <segue destination="eiJ-Ne-iDT" kind="show" id="csc-ZI-Qsp"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w9P-F1-SQS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w9P-F1-SQS">
                                 <rect key="frame" x="35" y="71" width="530" height="420"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.69019607839999997" green="0.69019607839999997" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="1FX-Gq-VNx">
+                                        <rect key="frame" x="0.0" y="28" width="530" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1FX-Gq-VNx" id="hbt-wK-H4z">
+                                            <rect key="frame" x="0.0" y="0.0" width="530" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="hg5-uL-nPP" id="V0E-P5-sxV"/>
                                     <outlet property="delegate" destination="hg5-uL-nPP" id="Zli-0z-DyV"/>
@@ -198,7 +209,7 @@
                                         </constraints>
                                         <state key="normal" image="Pause"/>
                                         <connections>
-                                            <action selector="breakButton:" destination="R1h-52-PfE" eventType="touchUpInside" id="Ls4-p0-BOy"/>
+                                            <action selector="breakButton:" destination="R1h-52-PfE" eventType="touchUpInside" id="iqI-2f-ojS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIv-sc-rrD">
@@ -282,11 +293,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="breaking" destination="xLT-ZP-daH" id="oce-lg-Qd5"/>
                         <outlet property="labelExercise" destination="su2-lg-pka" id="OvB-UZ-1Op"/>
                         <outlet property="labelOverviewTime" destination="xDt-SN-lNq" id="za0-Z6-9H9"/>
                         <outlet property="labelRunTime" destination="EQ0-LJ-c5C" id="iBM-Tw-x9I"/>
                         <outlet property="labelTotalOverviewTime" destination="6fW-NG-nr3" id="JjF-9T-59Z"/>
                         <outlet property="labelTotalRunTime" destination="KgU-fm-jlj" id="rV2-Fu-k74"/>
+                        <outlet property="play" destination="FIv-sc-rrD" id="NJe-5g-0W7"/>
+                        <outlet property="stop" destination="7L7-3U-Gw2" id="ELd-yr-iwc"/>
                         <segue destination="l5y-Yb-gL9" kind="show" identifier="End" id="vQs-Yc-ccJ"/>
                     </connections>
                 </viewController>
@@ -589,11 +603,10 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <action selector="startWOButton:" destination="eiJ-Ne-iDT" eventType="touchUpInside" id="faD-ff-TdM"/>
                                             <segue destination="R1h-52-PfE" kind="show" identifier="OverviewToWO" id="UXE-V6-9P4"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hG9-kc-GkU">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hG9-kc-GkU">
                                         <rect key="frame" x="90" y="84" width="420" height="372"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -701,7 +714,6 @@
                                 <rect key="frame" x="256" y="158" width="88" height="50"/>
                                 <state key="normal" title="Next" image="Right"/>
                                 <connections>
-                                    <action selector="NextNewWoButton:" destination="pbm-6q-kVK" eventType="touchUpInside" id="RhW-eI-y6v"/>
                                     <segue destination="9KH-1s-NY0" kind="show" identifier="nameToNewWO" id="ONR-Vg-5vk"/>
                                 </connections>
                             </button>
@@ -729,10 +741,10 @@
         <image name="buttonnwop" width="490" height="156"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4vT-QV-yBY"/>
-        <segue reference="vQs-Yc-ccJ"/>
+        <segue reference="uAN-PW-vXQ"/>
+        <segue reference="csc-ZI-Qsp"/>
         <segue reference="UXE-V6-9P4"/>
-        <segue reference="TKe-A8-msp"/>
-        <segue reference="uTK-T6-mnH"/>
+        <segue reference="vQs-Yc-ccJ"/>
+        <segue reference="em3-8L-ncq"/>
     </inferredMetricsTieBreakers>
 </document>

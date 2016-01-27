@@ -9,19 +9,20 @@
 import Foundation
 import UIKit
 
-
-
 class NewWOPView: UIViewController {
     
+    // Exercises
     var WOTypes = ["Cruch","Run","Jump","Push up","Lift"]
-    
+    //Total time of the new exercise.
     @IBOutlet weak var labelTotalTime: UILabel!
     var time = Int64()
     
+    //Shows the new work out in MYWOPOVerviewView.
     @IBAction func GoToWOButton(sender: UIButton) {
       DB.selectWOName()
     }
     
+    //To chose the length of an exercise.
     //http://www.ioscreator.com/tutorials/segmented-control-tutorial-ios8-swift
     @IBOutlet weak var minutesBar: UISegmentedControl!
     @IBAction func minutesChanger(sender: UISegmentedControl) {
@@ -43,21 +44,20 @@ class NewWOPView: UIViewController {
         }
     }
     
+    //Adds an exercise to the work out.
     @IBAction func addButton(sender: UIButton) {
         DB.insertNewExercises()
         time += DB.valueMin
         labelTotalTime.text! = "Total Time:\(time):00 minutes"
-        //print(DB.valueMin)
     }
-  
-   
- 
   
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         //Start values of the minutesbar and pickerview.
          DB.valueMin = 2
          DB.valueWOType = "Crunch"
+        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B1.png")!)
     }
     
@@ -65,8 +65,7 @@ class NewWOPView: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    //Pickerview: http://www.ioscreator.com/tutorials/picker-view-tutorial-ios8-swift
-    
+    //Pickerview of the exercises: http://www.ioscreator.com/tutorials/picker-view-tutorial-ios8-swift
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -80,7 +79,6 @@ class NewWOPView: UIViewController {
     }
     
     func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int){
-        //print(WOTypes[row])
         DB.valueWOType = WOTypes[row]
         self.view.endEditing(true)
     }

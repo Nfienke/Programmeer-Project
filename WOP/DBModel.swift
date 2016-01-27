@@ -19,7 +19,7 @@ public class DBModel{
     public static let sharedInstance = DBModel()
     private init() {}
     
-    //TABLE 1.
+    //Table 1.
     let Table1 = Table("Table1")
     let idWO = Expression<Int64>("idWO")
     let nameWO = Expression<String?>("nameWO")
@@ -38,7 +38,8 @@ public class DBModel{
     var WOOverview = [String]()
     var WODict = Dictionary <String, Int>()
     
-    public func Database() -> Connection{
+    //Makes a connection to the database.
+    public func Database() -> Connection {
     
         let path = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory, .UserDomainMask, true
@@ -47,6 +48,7 @@ public class DBModel{
         return try! Connection("\(path)/db.sqlite3")//path?
     }
     
+    //Creates the first table: the id of the work out and the name of the work out.
     func createTable() {
         
         do{
@@ -61,6 +63,7 @@ public class DBModel{
         }
     }
     
+    //Creates the second table: the id of the work out, the exercises and their time.
     func createTable2() {
         
         do{
@@ -76,7 +79,7 @@ public class DBModel{
         }
     }
     
-    // Inserts a new Work Out in NameNewWOPView.
+    // Inserts a new Work Out (NameNewWOPView).
     func insertNewWO() {
        
         do {
@@ -91,7 +94,7 @@ public class DBModel{
         }
     }
     
-    // Inserts excercises for the new Work Out in NewWOPView.
+    // Inserts excercises for the new Work Out (NewWOPView).
     func insertNewExercises() {
        
         do{
@@ -105,7 +108,7 @@ public class DBModel{
         }
     }
     
-    // Selects an overview of al the Work Outs for MyWOPView.
+    // Selects an overview of al the Work Outs (MyWOPView).
     func selectViewWO() {
         
         do{
@@ -119,14 +122,9 @@ public class DBModel{
         }
     }
     
-    // Selects the exercises of the selected Work Out for MyWOPOVerviewView en WOView.
+    // Selects the exercises of the selected Work Out (MyWOPOVerviewView and WOView).
     func selectWOName() {
-        
-        //WOOverview = []
-        
-        print("name:", DB.valueNameWO)
-        
-        
+     
         do{
             let WOselect = Table1.filter(nameWO.like(DB.valueNameWO))
             for row in try db.prepare(WOselect){
@@ -147,8 +145,9 @@ public class DBModel{
         }
     }
     
-    //Removes a Work Out. (MyWOPView)
+    //Removes a Work Out (MyWOPView).
     func removeWO() {
+        
         let WOselect = Table1.filter(nameWO.like(DB.valueNameWO))
         let WOremove = Table1.filter(nameWO.like(DB.valueNameWO))
         var id = Int64()
@@ -170,7 +169,7 @@ public class DBModel{
             }
                
             else {
-                print("WO not found")
+                print("Work out not found")
             }
         }
             
@@ -178,23 +177,4 @@ public class DBModel{
             print("delete failed: \(error)")
         }
     }
-    
-    // to see what is in the DB.-> in menu weghalen en outcommenten
-        func selectWO() {
-            do{
-                for row in try db.prepare(Table1){
-                    print("idWO: \(row[idWO]), NameWO: \(row[nameWO])")
-                    print("Selection completed")
-                }
-                for row in try db.prepare(Table2WO){
-                    print("idWO: \(row[idWO]), WOType: \(row[WOType]), min: \(row[min])")
-                    print("Selection 2 completed")
-                }
-            }
-    
-            catch{
-                print("selection failed: \(error)")
-            }
-        }
-    
 }

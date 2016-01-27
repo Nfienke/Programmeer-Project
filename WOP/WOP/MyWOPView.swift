@@ -12,7 +12,7 @@ import UIKit
 class MyWOPView: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     var WOoverview = [String]()
-    
+    @IBOutlet weak var OverviewTable: UITableView!
     
     @IBAction func GoToWoView(sender: UIButton) {
         
@@ -20,35 +20,31 @@ class MyWOPView: UIViewController, UITableViewDelegate, UITableViewDataSource  {
             DB.selectWOName()
             DB.valueNameWO = ""
         }
-        
-       
     }
     
-    @IBOutlet weak var OverviewTable: UITableView!
-    
- 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Clears some values.
         DB.valueNameWO = ""
         DB.WOview = []
+        
+        //Selects in DBModel all the work out possibilities.
         DB.selectViewWO()
-        
-        
         WOoverview = DB.WOview
-        print (WOoverview)
-        
-        //DB.selectViewWO()
+    
         self.OverviewTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B10.png")!)
+        OverviewTable.backgroundColor = UIColor.clearColor()
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
     
-    //table
-    
+    //Table of all the work outs.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  WOoverview.count
     }
@@ -56,29 +52,23 @@ class MyWOPView: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.OverviewTable.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         cell.textLabel?.text = WOoverview[indexPath.row]
+        cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.5)
         return cell
     }
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //print("You selected cell #(indexPath.row)!")
         DB.valueNameWO = WOoverview[indexPath.row]
-        //print(DB.valueNameWO)
     }
     
+    // Removes an work out from the table and in DBModel from the Database.
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            
             DB.valueNameWO = WOoverview[indexPath.row]
             WOoverview.removeAtIndex(indexPath.row)
             DB.removeWO()
             OverviewTable.reloadData()
         }
-
     }
-   
-    
-   
-    
-
 }
