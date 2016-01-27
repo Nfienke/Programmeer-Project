@@ -51,6 +51,16 @@ daarvoor heb ik wel de inhoud van de database aangepast. Ook een aantal keer opn
 ##Dag 14
 - De work out wordt nu afgespeeld zonder pauzes, maar in het echt dan ga je vaak niet meteen door. Daarom wordt de wordt de workout na een oefening gepauzeerd. Veel getest met de app om te kijken waar er nog dingen misten en wat nog fout ging. Zoals een dubbele selectie bij het work out overzicht. Dit weekend moet ik nog meer gaan testen met de app. 
 
+##Dag 15
+-Final beta-versie. Nog wat bugs eruit gehaald. 
+
+##Dag 16
+- Code netter gemaakt. 
+- 
+
+##Dag 17
+- Applicatie gecheckt of het werkt vanaf github nieuwe download.
+
 
 modelclasses voor martijn? todo
 - 
