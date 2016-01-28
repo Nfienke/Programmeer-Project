@@ -24,6 +24,7 @@ class MenuView: UIViewController {
             DBModel.sharedInstance.valueNameWO = NSUserDefaults.standardUserDefaults().objectForKey("NameWO") as! String
             
             playButtton.hidden = false
+            print(DBModel.sharedInstance.valueNameWO)
         }
             
         else {

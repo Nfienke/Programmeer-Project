@@ -119,17 +119,17 @@ class WOView: UIViewController {
         
         //The end of an exercise -> break.
         if min2 == WO.timeWO {
+            WO.intIndex += 1
+            WO.playWO()
+            labelExercise.text! = WO.WOtype
             
             if timerTotal {
                 timerTotal = false
                 breakModeButtons()
                 onOffTimer()
             }
-            
             playSound()
             min2 = 0
-            WO.intIndex += 1
-            WO.playWO()
         }
         return true
     }
