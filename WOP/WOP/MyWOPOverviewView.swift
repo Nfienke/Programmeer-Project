@@ -15,8 +15,7 @@ class MyWOPOverviewView: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var tableWoOverview: UITableView!
         
     @IBAction func startWOButton(sender: UIButton) {
-        NSUserDefaults.standardUserDefaults().setObject(DBModel.sharedInstance.valueNameWO, forKey: "NameWO")
-        print("name is empty1?", DBModel.sharedInstance.valueNameWO)
+       // NSUserDefaults.standardUserDefaults().setObject(DBModel.sharedInstance.valueNameWO, forKey: "NameWO")
     }
     
     @IBAction func backToWOViewButton(sender: UIButton) {

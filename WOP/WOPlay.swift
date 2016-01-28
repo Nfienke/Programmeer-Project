@@ -20,8 +20,6 @@ public class WOPlay {
     func playWO() {
         
         NSUserDefaults.standardUserDefaults().setObject(DBModel.sharedInstance.valueNameWO, forKey: "NameWO")
-        print("hier8",DBModel.sharedInstance.valueNameWO)
-        
         DBModel.sharedInstance.selectWOName()
         timeTotal = 0
         

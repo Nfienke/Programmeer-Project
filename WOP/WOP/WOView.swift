@@ -122,6 +122,7 @@ class WOView: UIViewController {
             WO.intIndex += 1
             WO.playWO()
             labelExercise.text! = WO.WOtype
+            labelOverviewTime.text! = "\(String(format:"%02d", WO.timeWO)):00"
             
             if timerTotal {
                 timerTotal = false
