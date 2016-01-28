@@ -27,7 +27,7 @@ Het voorstel is om een work out program applicatie te maken. Deze applicatie gee
 - New Work Out Program: hier wordt een nieuw work out programma vastgesteld, door op een work out te klikken, dan een tijd aan te klikken en dan toe te voegen. 
 - Vervolgens wordt de nieuwe work out opgeslagen in My Work Outs. En vervolgens kan de gebuiker in My Work Out overview, een overzicht van de work out vinden.  
 - De work out kan worden afgespeeld, gepauzeerd en worden gestopt. 
-![doc/s4](doc/s4.png =500x)![doc/s3](doc/s3.png)
+![doc/s4](doc/s4.png)![doc/s3](doc/s3.png)
 ![doc/s1](doc/s1.png)
 
 <b>Mogelijke problemen</b><br>
