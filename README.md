@@ -21,17 +21,18 @@ Het voorstel is om een work out program applicatie te maken. Deze applicatie gee
 ![doc/sketchtotal](doc/sketchtotal.png)
 
 <b>data sets and sources</b><br> 
- - Eerst was het idee om de data in een list op te slaan, maar nu wil ik gaan kijken of ik gebruik kan maken van de CloudKit. 
+ - Eerst was het idee om de data in een list op te slaan, maar vervolgens wilde ik gebruik maken van Cloudkit als database. Uiteindelijk heb ik gekozen voor een Sqlite database om de data in op te slaan. 
 
 <b>Onderdelen van de applicatie</b><br>
 - New Work Out Program: hier wordt een nieuw work out programma vastgesteld, door op een work out te klikken, dan een tijd aan te klikken en dan toe te voegen. 
-- Vervolgens wordt de nieuwe work out opgeslagen in My Work Outs. 
-- De work out kan worden gepauzeerd, vervolgd en worden gestopt. Als de applicatie tijdens de work out wordt gestopt, heeft de gebruiker de mogelijk om de work out te hervatten. 
+- Vervolgens wordt de nieuwe work out opgeslagen in My Work Outs. En vervolgens kan de gebuiker in My Work Out overview, een overzicht van de work out vinden.  
+- De work out kan worden afgespeeld, gepauzeerd en worden gestopt. 
+![doc/s4](doc/s4.png)![doc/s3](doc/s3.png)
+![doc/s1](doc/s1.png)
 
 <b>Mogelijke problemen</b><br>
-- CloudKit is een nieuw platform voor mij, dus het kan zijn dat de workouts toch op een andere manier moeten worden opgeslagen. 
-- Het verzenden van data tussen de schermen met NS User Defaults. 
-- Het hervatten van het spel. 
+- De database is een nieuw dus het kan zijn dat ik daar ergens tegen aan ga lopen. 
+- Het verzenden van data tussen de schermen met NSUserDefaults. Want dit ging in het vorige project niet goed, dus nu moet ik goed gaan kijken hoe ik dat beter kan gaan aanpakken. 
 - De grootte van de work out. 
 
 <b>Eventuele toevoegingen</b><br>

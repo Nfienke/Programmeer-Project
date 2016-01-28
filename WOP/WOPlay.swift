@@ -16,7 +16,7 @@ public class WOPlay {
     var WOtype = String()
     var intIndex = 0
     
-    // Shows information about the chosen work out, so it can be palyed: time and exercises.
+    // Processses information about the chosen work out, so it can be played: time and exercises.
     func playWO() {
         
         NSUserDefaults.standardUserDefaults().setObject(DBModel.sharedInstance.valueNameWO, forKey: "NameWO")
