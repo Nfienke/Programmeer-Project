@@ -18,7 +18,7 @@ Het voorstel is om een work out program applicatie te maken. Deze applicatie gee
 <br>
 
 <b>Schetsen</b><br>
-![doc/sketchtotal](doc/sketchtotal.png)
+<img src="doc/sketchtotal.png" width="400">
 
 <b>Data sets and sources</b><br> 
  - Eerst was het idee om de data in een list op te slaan, maar vervolgens wilde ik gebruik maken van Cloudkit als database. Uiteindelijk heb ik gekozen voor een Sqlite database om de data in op te slaan. 
@@ -27,8 +27,9 @@ Het voorstel is om een work out program applicatie te maken. Deze applicatie gee
 - New Work Out Program: hier wordt een nieuw work out programma vastgesteld, door op een work out te klikken, dan een tijd aan te klikken en dan toe te voegen. 
 - Vervolgens wordt de nieuwe work out opgeslagen in My Work Outs. En vervolgens kan de gebuiker in My Work Out overview, een overzicht van de work out vinden.  
 - De work out kan worden afgespeeld, gepauzeerd en worden gestopt. 
-![doc/s4](doc/s4.png)![doc/s3](doc/s3.png)
-![doc/s1](doc/s1.png)
+<img src="doc/doc/s4.png" width="400">
+<img src="doc/doc/s3.png" width="400">
+<img src="doc/doc/s1.png" width="400">
 
 <b>Mogelijke problemen</b><br>
 - De database is een nieuw dus het kan zijn dat ik daar ergens tegen aan ga lopen. 
