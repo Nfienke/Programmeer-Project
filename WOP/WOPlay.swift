@@ -19,7 +19,7 @@ public class WOPlay {
     // Processses information about the chosen work out, so it can be played: time and exercises.
     func playWO() {
         
-        NSUserDefaults.standardUserDefaults().setObject(DBModel.sharedInstance.valueNameWO, forKey: "NameWO")
+        NSUserDefaults.standardUserDefaults().setObject(DBModel.sharedInstance.ExerciseDict, forKey: "WO")
         DBModel.sharedInstance.selectWOName()
         timeTotal = 0
         

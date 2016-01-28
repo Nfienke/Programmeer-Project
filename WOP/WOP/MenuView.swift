@@ -20,21 +20,19 @@ class MenuView: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B9.png")!)
         
         //NSUserdefaults loading: checking if there was a previous work out.
-        if NSUserDefaults.standardUserDefaults().objectForKey("NameWO") != nil {
-            DBModel.sharedInstance.valueNameWO = NSUserDefaults.standardUserDefaults().objectForKey("NameWO") as! String
+        if NSUserDefaults.standardUserDefaults().objectForKey("WO") != nil {
+            DBModel.sharedInstance.ExerciseDict = NSUserDefaults.standardUserDefaults().objectForKey("WO") as! Dictionary!
             
             playButtton.hidden = false
         }
             
         else {
-        
             playButtton.hidden = true
         }
    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
 }
 

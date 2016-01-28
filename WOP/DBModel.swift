@@ -54,6 +54,7 @@ public class DBModel {
     func createTable() {
         
         do {
+            
             try self.Database().run(TableWO.create(ifNotExists: true) { t in
                 t.column(idWO, primaryKey: true)
                 t.column(nameWO, unique: true)
@@ -69,6 +70,7 @@ public class DBModel {
     func createTable2() {
         
         do {
+            
             try self.Database().run(TableExercises.create(ifNotExists: true) { t in
                 t.column(idWO)
                 t.column(WOType)
@@ -100,12 +102,12 @@ public class DBModel {
     func insertNewExercises() {
        
         do {
+            
             try self.Database().run(TableExercises.insert(idWO <- valueIdWO, WOType <- valueWOType, min <- valueMin))
         }
             
         catch {
             print("insertion failed: \(error)")
-            
         }
     }
     
@@ -113,6 +115,7 @@ public class DBModel {
     func selectViewWO() {
         
         do {
+            
             for row in try self.Database().prepare(TableWO) {
                 WOview.append("\(row[nameWO]!)")
             }
@@ -127,6 +130,7 @@ public class DBModel {
     func selectWOName() {
      
         do {
+            
             let WOselect = TableWO.filter(nameWO.like(valueNameWO))
             for row in try self.Database().prepare(WOselect) {
                 valueIdWO = row[idWO]
@@ -159,7 +163,7 @@ public class DBModel {
             for row in try self.Database().prepare(WOselect) {
                 id = row[idWO]
             }
-            
+    
             if try self.Database().run(WOremove.delete()) > 0 {
             }
             

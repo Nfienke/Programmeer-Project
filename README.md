@@ -47,7 +47,6 @@ Mocht de applicatie te simpel blijken zijn er een aantal features die ik wil toe
 - Seven: deze applicatie lijkt op deze app. De applicatie geeft aan de gebruiker aan wat hij moet doen en hoelang. De gebruiker kan kiezen tussen een aantal oefeningen, maar kan zelf niet een work out samenstellen. Een voice over geeft instructies aan de gebruiker.
 -  Trainingen: deze applicatie helpt de gebruiker ook tijdens de training, maar richt zich maar op 1 spiergroep. De gebruiker kan hier ook niet zelf een volledige work out samenstellen. De applicatie laat wel instructie fimpjes zien, zodat de gebruiker deze makkelijk kan nadoen. 
 
-
 # Cite
 
 - Achtergrond: http://stackoverflow.com/questions/25106784/how-to-set-a-background-image-to-a-uiview-in-swift

@@ -14,10 +14,6 @@ class MyWOPOverviewView: UIViewController, UITableViewDelegate, UITableViewDataS
     var woTypes = [String]()
     @IBOutlet weak var tableWoOverview: UITableView!
         
-    @IBAction func startWOButton(sender: UIButton) {
-       // NSUserDefaults.standardUserDefaults().setObject(DBModel.sharedInstance.valueNameWO, forKey: "NameWO")
-    }
-    
     @IBAction func backToWOViewButton(sender: UIButton) {
         DBModel.sharedInstance.ExerciseOverview = []
     }
@@ -55,6 +51,5 @@ class MyWOPOverviewView: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
     }
 }

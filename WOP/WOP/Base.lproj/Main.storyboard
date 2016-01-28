@@ -608,7 +608,6 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <action selector="startWOButton:" destination="eiJ-Ne-iDT" eventType="touchUpInside" id="5h6-lN-Zbd"/>
                                             <segue destination="R1h-52-PfE" kind="show" identifier="OverviewToWO" id="UXE-V6-9P4"/>
                                         </connections>
                                     </button>

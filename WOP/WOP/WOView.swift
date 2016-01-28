@@ -158,10 +158,7 @@ class WOView: UIViewController {
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "B4.png")!)
         
-        //NSUserdefaults loading: previous chosen work out.
-        if NSUserDefaults.standardUserDefaults().objectForKey("NameWO") != nil{
-            DBModel.sharedInstance.valueNameWO = NSUserDefaults.standardUserDefaults().objectForKey("NameWO") as! String
-        }
+         print("modelname",DBModel.sharedInstance.valueNameWO)
         
         DBModel.sharedInstance.selectWOName()
         WO.playWO()
@@ -170,7 +167,7 @@ class WOView: UIViewController {
         
         //Format: http://rshankar.com/simple-stopwatch-app-in-swift/
         labelTotalOverviewTime.text! = "\(String(format:"%02d", WO.timeTotal)):00"
-        labelOverviewTime.text! = "\(String(format:"%02d", WO.timeWO)):00" //?
+        labelOverviewTime.text! = "\(String(format:"%02d", WO.timeWO)):00"
         labelTotalRunTime.text! = "\(String(format:"%02d", min)):\(String(format:"%02d", sec))"
         labelRunTime.text! = "\(String(format:"%02d", min)):\(String(format:"%02d", sec))"
         

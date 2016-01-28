@@ -32,7 +32,7 @@ SQLite install manual: https://github.com/stephencelis/SQLite.swift/blob/master/
 - Database werkt. Met dank aan Tim Baard. Nu ook wat functionaliteiten ermee kunnen installeren. 
 
 ##Dag 10
-- inleveren alpha version.
+- Inleveren alpha version.
 - Veel nog bezig geweest met database, maar lukte niet echt.
 
 ##Dag 11
@@ -65,6 +65,8 @@ daarvoor heb ik wel de inhoud van de database aangepast. Ook een aantal keer opn
 
 ##Dag 18
 - Code review van Julian. Van daaruit nog wat dingen aangepast. Waaronder het aanroepen van de model classes. 
+- Werken aan report.
+- Nieuw Framework tekenen. 
 
 ##Dag 19
 - Report afmaken.
@@ -73,5 +75,3 @@ daarvoor heb ik wel de inhoud van de database aangepast. Ook een aantal keer opn
 ##Dag 20
 - Final presentation.
 
-modelclasses voor martijn? todo
-- 
