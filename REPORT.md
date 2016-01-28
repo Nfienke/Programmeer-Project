@@ -19,7 +19,8 @@ De gebruiker kan zelf een programma maken door een oefening met een tijdsduur to
 
 <b>Model</b><br>
 De applicatie maakt gebruik van een lokale Sqlite Database. 
-De applicatie heeft twee models; DBModel en WOPlay. DBModel bevat alle functies die de lokale database betreffen. Dit model selecteert, inserts en verwijdert informatie van de database. Het WOPlay model verwerkt informatie verkregen van DBModel over de work out zodat de work out kan worden afgespeeld. De oefeningen met tijdsduur worden geselecteerd uit de database door DBModel en in een dictionary gestopt. WOplay leest deze dictionary vervolgens weer uit.<br>
+De applicatie heeft twee models; DBModel en WOPlay. DBModel bevat alle functies die de lokale database betreffen. Dit model selecteert, inserts en verwijdert informatie van de database. Het WOPlay model verwerkt informatie verkregen van DBModel over de work out zodat de work out kan worden afgespeeld. De oefeningen met tijdsduur worden geselecteerd uit de database door DBModel en in een dictionary gestopt. WOplay leest deze dictionary vervolgens weer uit. <br>
+
 <b>View en controllers</b><br>
 In het menu kan de gebruiker navigeren naar een nieuwe work out maken, het overzicht van de work outs zien of om meteen de vorige work out nog eens af te spelen. Dit kan alleen als er al iets in staat anders is deze optie verborgen. 
 Bij het maken van een nieuwe work out kiest de gebruiker eerst een nieuwe naam voor de work out. Deze mag niet leeg zijn en moet ook uniek zijn. De gebruiker voert de naam in en NameNewWOP roept DBModel aan om een nieuwe work out aan te maken in de database. 
