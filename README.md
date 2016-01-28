@@ -20,7 +20,7 @@ Het voorstel is om een work out program applicatie te maken. Deze applicatie gee
 <b>Schetsen</b><br>
 ![doc/sketchtotal](doc/sketchtotal.png)
 
-<b>data sets and sources</b><br> 
+<b>Data sets and sources</b><br> 
  - Eerst was het idee om de data in een list op te slaan, maar vervolgens wilde ik gebruik maken van Cloudkit als database. Uiteindelijk heb ik gekozen voor een Sqlite database om de data in op te slaan. 
 
 <b>Onderdelen van de applicatie</b><br>
